@@ -156,5 +156,34 @@ namespace Inventory
         {
             Form1_Load(e, e);
         }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1_Load(e, e);
+
+        }
+
+        private void typeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formType = new frmType();
+            formType.Show();
+        }
+
+        private void materialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formMaterial = new frmMaterial();
+            formMaterial.Show();
+        }
+
+        private void chronologyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formChrono = new frmChronology();
+            formChrono.Show();
+        }
     }
 }

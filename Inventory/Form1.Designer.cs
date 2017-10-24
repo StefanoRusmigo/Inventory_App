@@ -113,6 +113,12 @@
             this.artifactsTableAdapter = new Inventory.Database1DataSet1TableAdapters.ArtifactsTableAdapter();
             this.tableAdapterManager = new Inventory.Database1DataSet1TableAdapters.TableAdapterManager();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.typeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chronologyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             artifact_codeLabel = new System.Windows.Forms.Label();
             museum_codeLabel = new System.Windows.Forms.Label();
             location_district_Label = new System.Windows.Forms.Label();
@@ -135,6 +141,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imagePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // artifact_codeLabel
@@ -559,9 +566,9 @@
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewImageColumn1});
             this.artifactsDataGridView.DataSource = this.artifactsBindingSource;
-            this.artifactsDataGridView.Location = new System.Drawing.Point(91, 305);
+            this.artifactsDataGridView.Location = new System.Drawing.Point(54, 432);
             this.artifactsDataGridView.Name = "artifactsDataGridView";
-            this.artifactsDataGridView.Size = new System.Drawing.Size(1162, 220);
+            this.artifactsDataGridView.Size = new System.Drawing.Size(1341, 220);
             this.artifactsDataGridView.TabIndex = 1;
             // 
             // artifact_codeTextBox
@@ -827,11 +834,59 @@
             this.toolStripButton5.Text = "toolStripButton5";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.refreshToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(114, 48);
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.typeToolStripMenuItem,
+            this.materialToolStripMenuItem,
+            this.chronologyToolStripMenuItem});
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
+            // typeToolStripMenuItem
+            // 
+            this.typeToolStripMenuItem.Name = "typeToolStripMenuItem";
+            this.typeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.typeToolStripMenuItem.Text = "Type";
+            this.typeToolStripMenuItem.Click += new System.EventHandler(this.typeToolStripMenuItem_Click);
+            // 
+            // materialToolStripMenuItem
+            // 
+            this.materialToolStripMenuItem.Name = "materialToolStripMenuItem";
+            this.materialToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.materialToolStripMenuItem.Text = "Material";
+            this.materialToolStripMenuItem.Click += new System.EventHandler(this.materialToolStripMenuItem_Click);
+            // 
+            // chronologyToolStripMenuItem
+            // 
+            this.chronologyToolStripMenuItem.Name = "chronologyToolStripMenuItem";
+            this.chronologyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.chronologyToolStripMenuItem.Text = "Chronology";
+            this.chronologyToolStripMenuItem.Click += new System.EventHandler(this.chronologyToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 581);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(artifact_codeLabel);
             this.Controls.Add(this.artifact_codeTextBox);
             this.Controls.Add(museum_codeLabel);
@@ -868,6 +923,7 @@
             this.Controls.Add(this.artifactsBindingNavigator);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.artifactsBindingNavigator)).EndInit();
             this.artifactsBindingNavigator.ResumeLayout(false);
@@ -876,6 +932,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imagePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -950,6 +1007,12 @@
         private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.PictureBox imagePictureBox;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem typeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem materialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chronologyToolStripMenuItem;
     }
 }
 
