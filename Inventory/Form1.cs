@@ -39,6 +39,14 @@ namespace Inventory
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database1DataSet11.Chronologies' table. You can move, or remove it, as needed.
+            this.chronologiesTableAdapter.Fill(this.database1DataSet11.Chronologies);
+            // TODO: This line of code loads data into the 'database1DataSet11.ArtifactTypes' table. You can move, or remove it, as needed.
+            this.artifactTypesTableAdapter.Fill(this.database1DataSet11.ArtifactTypes);
+            // TODO: This line of code loads data into the 'database1DataSet11.Materials' table. You can move, or remove it, as needed.
+            this.materialsTableAdapter.Fill(this.database1DataSet11.Materials);
+            // TODO: This line of code loads data into the 'database1DataSet11.Locations' table. You can move, or remove it, as needed.
+            this.locationsTableAdapter.Fill(this.database1DataSet11.Locations);
             // TODO: This line of code loads data into the 'database1DataSet1.Artifacts' table. You can move, or remove it, as needed.
             this.artifactsTableAdapter.Fill(this.database1DataSet1.Artifacts);
 
@@ -67,7 +75,7 @@ namespace Inventory
             da2.Fill(dt2);
             foreach (DataRow dr2 in dt2.Rows)
             {
-                toolStripComboBox1.ComboBox.Items.Add(dr2["name"].ToString());
+                toolStripComboBox1.ComboBox.Items.Add(dr2["name"].ToString().Trim());
             }
 
             cmd.CommandText = "SELECT name FROM Materials";
@@ -77,7 +85,7 @@ namespace Inventory
             da3.Fill(dt3);
             foreach (DataRow dr3 in dt3.Rows)
             {
-                toolStripComboBox4.ComboBox.Items.Add(dr3["name"].ToString());
+                toolStripComboBox4.ComboBox.Items.Add(dr3["name"].ToString().Trim());
             }
 
             cmd.CommandText = "SELECT Chronology FROM Chronologies";
@@ -87,7 +95,7 @@ namespace Inventory
             da4.Fill(dt4);
             foreach (DataRow dr4 in dt4.Rows)
             {
-                toolStripComboBox2.ComboBox.Items.Add(dr4["Chronology"].ToString());
+                toolStripComboBox2.ComboBox.Items.Add(dr4["Chronology"].ToString().Trim());
             }
 
             con.Close();
@@ -184,6 +192,23 @@ namespace Inventory
         {
             var formChrono = new frmChronology();
             formChrono.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            textBox1.Text = openFileDialog1.FileName;
+            imagePictureBox.Image = Image.FromFile(textBox1.Text);
+        }
+
+        private void imagePictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void descriptionLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

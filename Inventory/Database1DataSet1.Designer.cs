@@ -451,6 +451,10 @@ namespace Inventory {
             
             private global::System.Data.DataColumn columnImage;
             
+            private global::System.Data.DataColumn columnUsage;
+            
+            private global::System.Data.DataColumn columnBibliography;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ArtifactsDataTable() {
@@ -614,6 +618,22 @@ namespace Inventory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UsageColumn {
+                get {
+                    return this.columnUsage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BibliographyColumn {
+                get {
+                    return this.columnBibliography;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -665,7 +685,9 @@ namespace Inventory {
                         string Chronology, 
                         string Based_on, 
                         string Description, 
-                        byte[] Image) {
+                        byte[] Image, 
+                        string Usage, 
+                        string Bibliography) {
                 ArtifactsRow rowArtifactsRow = ((ArtifactsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Artifact_code,
@@ -683,7 +705,9 @@ namespace Inventory {
                         Chronology,
                         Based_on,
                         Description,
-                        Image};
+                        Image,
+                        Usage,
+                        Bibliography};
                 rowArtifactsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowArtifactsRow);
                 return rowArtifactsRow;
@@ -729,6 +753,8 @@ namespace Inventory {
                 this.columnBased_on = base.Columns["Based_on"];
                 this.columnDescription = base.Columns["Description"];
                 this.columnImage = base.Columns["Image"];
+                this.columnUsage = base.Columns["Usage"];
+                this.columnBibliography = base.Columns["Bibliography"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -770,6 +796,10 @@ namespace Inventory {
                 base.Columns.Add(this.columnDescription);
                 this.columnImage = new global::System.Data.DataColumn("Image", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnImage);
+                this.columnUsage = new global::System.Data.DataColumn("Usage", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUsage);
+                this.columnBibliography = new global::System.Data.DataColumn("Bibliography", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBibliography);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnArtifact_code}, true));
                 this.columnArtifact_code.AllowDBNull = false;
@@ -2287,6 +2317,38 @@ namespace Inventory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Usage {
+                get {
+                    try {
+                        return ((string)(this[this.tableArtifacts.UsageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Usage\' in table \'Artifacts\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableArtifacts.UsageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Bibliography {
+                get {
+                    try {
+                        return ((string)(this[this.tableArtifacts.BibliographyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bibliography\' in table \'Artifacts\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableArtifacts.BibliographyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMuseum_codeNull() {
                 return this.IsNull(this.tableArtifacts.Museum_codeColumn);
             }
@@ -2463,6 +2525,30 @@ namespace Inventory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetImageNull() {
                 this[this.tableArtifacts.ImageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUsageNull() {
+                return this.IsNull(this.tableArtifacts.UsageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUsageNull() {
+                this[this.tableArtifacts.UsageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBibliographyNull() {
+                return this.IsNull(this.tableArtifacts.BibliographyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBibliographyNull() {
+                this[this.tableArtifacts.BibliographyColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2959,6 +3045,8 @@ namespace Inventory.Database1DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Based_on", "Based_on");
             tableMapping.ColumnMappings.Add("Description", "Description");
             tableMapping.ColumnMappings.Add("Image", "Image");
+            tableMapping.ColumnMappings.Add("Usage", "Usage");
+            tableMapping.ColumnMappings.Add("Bibliography", "Bibliography");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -2991,8 +3079,8 @@ namespace Inventory.Database1DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Chronology", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Chronology", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Artifacts] ([Artifact_code], [Museum_code], [Location(district)], [Location(Place Name)], [GPS_coordinates], [Type_of_the_artifact], [Material], [Height], [Length], [Thickness], [Width], [Weight], [Chronology], [Based_on], [Description], [Image]) VALUES (@Artifact_code, @Museum_code, @p1, @p4, @GPS_coordinates, @Type_of_the_artifact, @Material, @Height, @Length, @Thickness, @Width, @Weight, @Chronology, @Based_on, @Description, @Image);
-SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)], GPS_coordinates, Type_of_the_artifact, Material, Height, Length, Thickness, Width, Weight, Chronology, Based_on, Description, Image FROM Artifacts WHERE (Artifact_code = @Artifact_code)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Artifacts] ([Artifact_code], [Museum_code], [Location(district)], [Location(Place Name)], [GPS_coordinates], [Type_of_the_artifact], [Material], [Height], [Length], [Thickness], [Width], [Weight], [Chronology], [Based_on], [Description], [Image], [Usage], [Bibliography]) VALUES (@Artifact_code, @Museum_code, @p1, @p4, @GPS_coordinates, @Type_of_the_artifact, @Material, @Height, @Length, @Thickness, @Width, @Weight, @Chronology, @Based_on, @Description, @Image, @Usage, @Bibliography);
+SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)], GPS_coordinates, Type_of_the_artifact, Material, Height, Length, Thickness, Width, Weight, Chronology, Based_on, Description, Image, Usage, Bibliography FROM Artifacts WHERE (Artifact_code = @Artifact_code)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Artifact_code", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Artifact_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Museum_code", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Museum_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3010,6 +3098,8 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Based_on", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Based_on", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Image", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usage", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Usage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Bibliography", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bibliography", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Artifacts] SET [Artifact_code] = @Artifact_code, [Museum_code] = @M" +
@@ -3017,25 +3107,26 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
                 "inates] = @GPS_coordinates, [Type_of_the_artifact] = @Type_of_the_artifact, [Mat" +
                 "erial] = @Material, [Height] = @Height, [Length] = @Length, [Thickness] = @Thick" +
                 "ness, [Width] = @Width, [Weight] = @Weight, [Chronology] = @Chronology, [Based_o" +
-                "n] = @Based_on, [Description] = @Description, [Image] = @Image WHERE (([Artifact" +
-                "_code] = @Original_Artifact_code) AND ((@IsNull_Museum_code = 1 AND [Museum_code" +
-                "] IS NULL) OR ([Museum_code] = @Original_Museum_code)) AND ((@p3 = 1 AND [Locati" +
-                "on(district)] IS NULL) OR ([Location(district)] = @p2)) AND ((@p6 = 1 AND [Locat" +
-                "ion(Place Name)] IS NULL) OR ([Location(Place Name)] = @p5)) AND ((@IsNull_GPS_c" +
-                "oordinates = 1 AND [GPS_coordinates] IS NULL) OR ([GPS_coordinates] = @Original_" +
-                "GPS_coordinates)) AND ((@IsNull_Type_of_the_artifact = 1 AND [Type_of_the_artifa" +
-                "ct] IS NULL) OR ([Type_of_the_artifact] = @Original_Type_of_the_artifact)) AND (" +
-                "(@IsNull_Material = 1 AND [Material] IS NULL) OR ([Material] = @Original_Materia" +
-                "l)) AND ((@IsNull_Height = 1 AND [Height] IS NULL) OR ([Height] = @Original_Heig" +
-                "ht)) AND ((@IsNull_Length = 1 AND [Length] IS NULL) OR ([Length] = @Original_Len" +
-                "gth)) AND ((@IsNull_Thickness = 1 AND [Thickness] IS NULL) OR ([Thickness] = @Or" +
-                "iginal_Thickness)) AND ((@IsNull_Width = 1 AND [Width] IS NULL) OR ([Width] = @O" +
-                "riginal_Width)) AND ((@IsNull_Weight = 1 AND [Weight] IS NULL) OR ([Weight] = @O" +
-                "riginal_Weight)) AND ((@IsNull_Chronology = 1 AND [Chronology] IS NULL) OR ([Chr" +
-                "onology] = @Original_Chronology)));\r\nSELECT Artifact_code, Museum_code, [Locatio" +
-                "n(district)], [Location(Place Name)], GPS_coordinates, Type_of_the_artifact, Mat" +
-                "erial, Height, Length, Thickness, Width, Weight, Chronology, Based_on, Descripti" +
-                "on, Image FROM Artifacts WHERE (Artifact_code = @Artifact_code)";
+                "n] = @Based_on, [Description] = @Description, [Image] = @Image, [Usage] = @Usage" +
+                ", [Bibliography] = @Bibliography WHERE (([Artifact_code] = @Original_Artifact_co" +
+                "de) AND ((@IsNull_Museum_code = 1 AND [Museum_code] IS NULL) OR ([Museum_code] =" +
+                " @Original_Museum_code)) AND ((@p3 = 1 AND [Location(district)] IS NULL) OR ([Lo" +
+                "cation(district)] = @p2)) AND ((@p6 = 1 AND [Location(Place Name)] IS NULL) OR (" +
+                "[Location(Place Name)] = @p5)) AND ((@IsNull_GPS_coordinates = 1 AND [GPS_coordi" +
+                "nates] IS NULL) OR ([GPS_coordinates] = @Original_GPS_coordinates)) AND ((@IsNul" +
+                "l_Type_of_the_artifact = 1 AND [Type_of_the_artifact] IS NULL) OR ([Type_of_the_" +
+                "artifact] = @Original_Type_of_the_artifact)) AND ((@IsNull_Material = 1 AND [Mat" +
+                "erial] IS NULL) OR ([Material] = @Original_Material)) AND ((@IsNull_Height = 1 A" +
+                "ND [Height] IS NULL) OR ([Height] = @Original_Height)) AND ((@IsNull_Length = 1 " +
+                "AND [Length] IS NULL) OR ([Length] = @Original_Length)) AND ((@IsNull_Thickness " +
+                "= 1 AND [Thickness] IS NULL) OR ([Thickness] = @Original_Thickness)) AND ((@IsNu" +
+                "ll_Width = 1 AND [Width] IS NULL) OR ([Width] = @Original_Width)) AND ((@IsNull_" +
+                "Weight = 1 AND [Weight] IS NULL) OR ([Weight] = @Original_Weight)) AND ((@IsNull" +
+                "_Chronology = 1 AND [Chronology] IS NULL) OR ([Chronology] = @Original_Chronolog" +
+                "y)));\r\nSELECT Artifact_code, Museum_code, [Location(district)], [Location(Place " +
+                "Name)], GPS_coordinates, Type_of_the_artifact, Material, Height, Length, Thickne" +
+                "ss, Width, Weight, Chronology, Based_on, Description, Image, Usage, Bibliography" +
+                " FROM Artifacts WHERE (Artifact_code = @Artifact_code)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Artifact_code", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Artifact_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Museum_code", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Museum_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3053,6 +3144,8 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Based_on", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Based_on", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Image", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usage", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Usage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Bibliography", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bibliography", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Artifact_code", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Artifact_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Museum_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Museum_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Museum_code", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Museum_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3095,16 +3188,12 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)], " +
                 "GPS_coordinates, Type_of_the_artifact, Material, Height, Length, Thickness, Widt" +
-                "h, Weight, Chronology, Based_on, Description, Image FROM dbo.Artifacts";
+                "h, Weight, Chronology, Based_on, Description, Image, Usage, Bibliography FROM db" +
+                "o.Artifacts";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)], GPS_coordinates, Type_of_the_artifact, Material, Height, Length, Thickness, Width, Weight, Chronology, Based_on, Description, Image FROM dbo.Artifacts
-Where 
- (@artifact         IS NULL OR len(@artifact)         =0   OR  Type_of_the_artifact = @artifact) AND
- (@material       IS NULL OR len(@material)      = 0   OR  Material                      = @material) AND
- (@location       IS NULL OR len(@location)      = 0   OR  [Location(district)] = @location) AND
- (@chronology IS NULL OR len(@chronology)= 0   OR  Chronology             = @chronology)";
+            this._commandCollection[1].CommandText = @"SELECT Artifact_code, Based_on, Bibliography, Chronology, Description, GPS_coordinates, Height, Image, Length, [Location(Place Name)], [Location(district)], Material, Museum_code, Thickness, Type_of_the_artifact, Usage, Weight, Width FROM Artifacts WHERE (@artifact IS NULL OR LEN(@artifact) = 0 OR Type_of_the_artifact = @artifact) AND (@material IS NULL OR LEN(@material) = 0 OR Material = @material) AND (@location IS NULL OR LEN(@location) = 0 OR [Location(district)] = @location) AND (@chronology IS NULL OR LEN(@chronology) = 0 OR Chronology = @chronology)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@artifact", global::System.Data.SqlDbType.NChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Type_of_the_artifact", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@material", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Material", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3345,7 +3434,9 @@ Where
                     string Chronology, 
                     string Based_on, 
                     string Description, 
-                    byte[] Image) {
+                    byte[] Image, 
+                    string Usage, 
+                    string Bibliography) {
             if ((Artifact_code == null)) {
                 throw new global::System.ArgumentNullException("Artifact_code");
             }
@@ -3442,6 +3533,18 @@ Where
             else {
                 this.Adapter.InsertCommand.Parameters[15].Value = ((byte[])(Image));
             }
+            if ((Usage == null)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(Usage));
+            }
+            if ((Bibliography == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(Bibliography));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3479,6 +3582,8 @@ Where
                     string Based_on, 
                     string Description, 
                     byte[] Image, 
+                    string Usage, 
+                    string Bibliography, 
                     string Original_Artifact_code, 
                     string Original_Museum_code, 
                     string p2, 
@@ -3588,107 +3693,119 @@ Where
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((byte[])(Image));
             }
+            if ((Usage == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Usage));
+            }
+            if ((Bibliography == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Bibliography));
+            }
             if ((Original_Artifact_code == null)) {
                 throw new global::System.ArgumentNullException("Original_Artifact_code");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Artifact_code));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Artifact_code));
             }
             if ((Original_Museum_code == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Museum_code));
-            }
-            if ((p2 == null)) {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(p2));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Museum_code));
             }
-            if ((p5 == null)) {
+            if ((p2 == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(p5));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(p2));
             }
-            if ((Original_GPS_coordinates == null)) {
+            if ((p5 == null)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_GPS_coordinates));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(p5));
             }
-            if ((Original_Type_of_the_artifact == null)) {
+            if ((Original_GPS_coordinates == null)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_Type_of_the_artifact));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_GPS_coordinates));
             }
-            if ((Original_Material == null)) {
+            if ((Original_Type_of_the_artifact == null)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Material));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Type_of_the_artifact));
             }
-            if ((Original_Height.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_Height.Value));
-            }
-            else {
+            if ((Original_Material == null)) {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            if ((Original_Length.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_Material));
+            }
+            if ((Original_Height.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(Original_Length.Value));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(Original_Height.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
-            if ((Original_Thickness.HasValue == true)) {
+            if ((Original_Length.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(Original_Thickness.Value));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(Original_Length.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            if ((Original_Width.HasValue == true)) {
+            if ((Original_Thickness.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_Width.Value));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_Thickness.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
-            if ((Original_Weight.HasValue == true)) {
+            if ((Original_Width.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_Weight.Value));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_Width.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
-            if ((Original_Chronology == null)) {
+            if ((Original_Weight.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_Weight.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
+            if ((Original_Chronology == null)) {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
             else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_Chronology));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_Chronology));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3726,6 +3843,8 @@ Where
                     string Based_on, 
                     string Description, 
                     byte[] Image, 
+                    string Usage, 
+                    string Bibliography, 
                     string Original_Artifact_code, 
                     string Original_Museum_code, 
                     string p2, 
@@ -3739,7 +3858,7 @@ Where
                     global::System.Nullable<int> Original_Width, 
                     global::System.Nullable<int> Original_Weight, 
                     string Original_Chronology) {
-            return this.Update(Original_Artifact_code, Museum_code, p1, p4, GPS_coordinates, Type_of_the_artifact, Material, Height, Length, Thickness, Width, Weight, Chronology, Based_on, Description, Image, Original_Artifact_code, Original_Museum_code, p2, p5, Original_GPS_coordinates, Original_Type_of_the_artifact, Original_Material, Original_Height, Original_Length, Original_Thickness, Original_Width, Original_Weight, Original_Chronology);
+            return this.Update(Original_Artifact_code, Museum_code, p1, p4, GPS_coordinates, Type_of_the_artifact, Material, Height, Length, Thickness, Width, Weight, Chronology, Based_on, Description, Image, Usage, Bibliography, Original_Artifact_code, Original_Museum_code, p2, p5, Original_GPS_coordinates, Original_Type_of_the_artifact, Original_Material, Original_Height, Original_Length, Original_Thickness, Original_Width, Original_Weight, Original_Chronology);
         }
     }
     
