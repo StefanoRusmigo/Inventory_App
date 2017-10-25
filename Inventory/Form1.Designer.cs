@@ -44,9 +44,8 @@
             System.Windows.Forms.Label chronologyLabel;
             System.Windows.Forms.Label based_onLabel;
             System.Windows.Forms.Label descriptionLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label usageLabel;
-            System.Windows.Forms.Label bibliographyLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.artifactsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.artifactsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -128,14 +127,15 @@
             this.chronologiesTableAdapter = new Inventory.Database1DataSet1TableAdapters.ChronologiesTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.usageTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.usageTextBox = new System.Windows.Forms.TextBox();
             this.bibliographyTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             artifact_codeLabel = new System.Windows.Forms.Label();
             museum_codeLabel = new System.Windows.Forms.Label();
             location_district_Label = new System.Windows.Forms.Label();
@@ -152,7 +152,6 @@
             based_onLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             usageLabel = new System.Windows.Forms.Label();
-            bibliographyLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.artifactsBindingNavigator)).BeginInit();
             this.artifactsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.artifactsBindingSource)).BeginInit();
@@ -170,13 +169,14 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // artifact_codeLabel
             // 
             artifact_codeLabel.AutoSize = true;
             artifact_codeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            artifact_codeLabel.Location = new System.Drawing.Point(494, 39);
+            artifact_codeLabel.Location = new System.Drawing.Point(538, 39);
             artifact_codeLabel.Name = "artifact_codeLabel";
             artifact_codeLabel.Size = new System.Drawing.Size(174, 31);
             artifact_codeLabel.TabIndex = 2;
@@ -186,7 +186,7 @@
             // 
             museum_codeLabel.AutoSize = true;
             museum_codeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            museum_codeLabel.Location = new System.Drawing.Point(532, 87);
+            museum_codeLabel.Location = new System.Drawing.Point(576, 87);
             museum_codeLabel.Name = "museum_codeLabel";
             museum_codeLabel.Size = new System.Drawing.Size(113, 20);
             museum_codeLabel.TabIndex = 4;
@@ -240,7 +240,7 @@
             // heightLabel
             // 
             heightLabel.AutoSize = true;
-            heightLabel.Location = new System.Drawing.Point(10, 35);
+            heightLabel.Location = new System.Drawing.Point(10, 32);
             heightLabel.Name = "heightLabel";
             heightLabel.Size = new System.Drawing.Size(41, 13);
             heightLabel.TabIndex = 16;
@@ -249,7 +249,7 @@
             // lengthLabel
             // 
             lengthLabel.AutoSize = true;
-            lengthLabel.Location = new System.Drawing.Point(10, 68);
+            lengthLabel.Location = new System.Drawing.Point(10, 59);
             lengthLabel.Name = "lengthLabel";
             lengthLabel.Size = new System.Drawing.Size(43, 13);
             lengthLabel.TabIndex = 18;
@@ -258,7 +258,7 @@
             // thicknessLabel
             // 
             thicknessLabel.AutoSize = true;
-            thicknessLabel.Location = new System.Drawing.Point(10, 94);
+            thicknessLabel.Location = new System.Drawing.Point(10, 85);
             thicknessLabel.Name = "thicknessLabel";
             thicknessLabel.Size = new System.Drawing.Size(59, 13);
             thicknessLabel.TabIndex = 20;
@@ -267,7 +267,7 @@
             // widthLabel
             // 
             widthLabel.AutoSize = true;
-            widthLabel.Location = new System.Drawing.Point(10, 120);
+            widthLabel.Location = new System.Drawing.Point(177, 32);
             widthLabel.Name = "widthLabel";
             widthLabel.Size = new System.Drawing.Size(38, 13);
             widthLabel.TabIndex = 22;
@@ -276,7 +276,7 @@
             // weightLabel
             // 
             weightLabel.AutoSize = true;
-            weightLabel.Location = new System.Drawing.Point(10, 146);
+            weightLabel.Location = new System.Drawing.Point(177, 58);
             weightLabel.Name = "weightLabel";
             weightLabel.Size = new System.Drawing.Size(44, 13);
             weightLabel.TabIndex = 24;
@@ -309,6 +309,16 @@
             descriptionLabel.TabIndex = 30;
             descriptionLabel.Text = "Description:";
             descriptionLabel.Click += new System.EventHandler(this.descriptionLabel_Click);
+            // 
+            // usageLabel
+            // 
+            usageLabel.AutoSize = true;
+            usageLabel.Location = new System.Drawing.Point(8, 159);
+            usageLabel.Name = "usageLabel";
+            usageLabel.Size = new System.Drawing.Size(41, 13);
+            usageLabel.TabIndex = 39;
+            usageLabel.Text = "Usage:";
+            usageLabel.Click += new System.EventHandler(this.usageLabel_Click);
             // 
             // artifactsBindingNavigator
             // 
@@ -368,6 +378,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // artifactsBindingSource
             // 
@@ -605,9 +616,9 @@
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
             this.artifactsDataGridView.DataSource = this.artifactsBindingSource;
-            this.artifactsDataGridView.Location = new System.Drawing.Point(7, 478);
+            this.artifactsDataGridView.Location = new System.Drawing.Point(7, 523);
             this.artifactsDataGridView.Name = "artifactsDataGridView";
-            this.artifactsDataGridView.Size = new System.Drawing.Size(1348, 220);
+            this.artifactsDataGridView.Size = new System.Drawing.Size(1348, 175);
             this.artifactsDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -692,19 +703,21 @@
             // 
             this.artifact_codeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Artifact_code", true));
             this.artifact_codeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.artifact_codeTextBox.Location = new System.Drawing.Point(674, 37);
+            this.artifact_codeTextBox.Location = new System.Drawing.Point(736, 37);
             this.artifact_codeTextBox.Name = "artifact_codeTextBox";
             this.artifact_codeTextBox.Size = new System.Drawing.Size(121, 38);
             this.artifact_codeTextBox.TabIndex = 3;
+            this.artifact_codeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // museum_codeTextBox
             // 
             this.museum_codeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Museum_code", true));
             this.museum_codeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.museum_codeTextBox.Location = new System.Drawing.Point(674, 87);
+            this.museum_codeTextBox.Location = new System.Drawing.Point(736, 87);
             this.museum_codeTextBox.Name = "museum_codeTextBox";
             this.museum_codeTextBox.Size = new System.Drawing.Size(95, 26);
             this.museum_codeTextBox.TabIndex = 5;
+            this.museum_codeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // location_district_ComboBox
             // 
@@ -781,41 +794,41 @@
             // heightTextBox
             // 
             this.heightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Height", true));
-            this.heightTextBox.Location = new System.Drawing.Point(131, 32);
+            this.heightTextBox.Location = new System.Drawing.Point(93, 32);
             this.heightTextBox.Name = "heightTextBox";
-            this.heightTextBox.Size = new System.Drawing.Size(121, 20);
+            this.heightTextBox.Size = new System.Drawing.Size(44, 20);
             this.heightTextBox.TabIndex = 17;
             // 
             // lengthTextBox
             // 
             this.lengthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Length", true));
-            this.lengthTextBox.Location = new System.Drawing.Point(131, 65);
+            this.lengthTextBox.Location = new System.Drawing.Point(93, 59);
             this.lengthTextBox.Name = "lengthTextBox";
-            this.lengthTextBox.Size = new System.Drawing.Size(121, 20);
+            this.lengthTextBox.Size = new System.Drawing.Size(44, 20);
             this.lengthTextBox.TabIndex = 19;
             // 
             // thicknessTextBox
             // 
             this.thicknessTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Thickness", true));
-            this.thicknessTextBox.Location = new System.Drawing.Point(131, 91);
+            this.thicknessTextBox.Location = new System.Drawing.Point(93, 85);
             this.thicknessTextBox.Name = "thicknessTextBox";
-            this.thicknessTextBox.Size = new System.Drawing.Size(121, 20);
+            this.thicknessTextBox.Size = new System.Drawing.Size(44, 20);
             this.thicknessTextBox.TabIndex = 21;
             // 
             // widthTextBox
             // 
             this.widthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Width", true));
-            this.widthTextBox.Location = new System.Drawing.Point(131, 117);
+            this.widthTextBox.Location = new System.Drawing.Point(260, 32);
             this.widthTextBox.Name = "widthTextBox";
-            this.widthTextBox.Size = new System.Drawing.Size(121, 20);
+            this.widthTextBox.Size = new System.Drawing.Size(44, 20);
             this.widthTextBox.TabIndex = 23;
             // 
             // weightTextBox
             // 
             this.weightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Weight", true));
-            this.weightTextBox.Location = new System.Drawing.Point(131, 143);
+            this.weightTextBox.Location = new System.Drawing.Point(260, 58);
             this.weightTextBox.Name = "weightTextBox";
-            this.weightTextBox.Size = new System.Drawing.Size(121, 20);
+            this.weightTextBox.Size = new System.Drawing.Size(44, 20);
             this.weightTextBox.TabIndex = 25;
             // 
             // chronologyComboBox
@@ -827,7 +840,7 @@
             this.chronologyComboBox.FormattingEnabled = true;
             this.chronologyComboBox.Location = new System.Drawing.Point(127, 32);
             this.chronologyComboBox.Name = "chronologyComboBox";
-            this.chronologyComboBox.Size = new System.Drawing.Size(160, 21);
+            this.chronologyComboBox.Size = new System.Drawing.Size(173, 21);
             this.chronologyComboBox.TabIndex = 27;
             // 
             // chronologiesBindingSource
@@ -841,7 +854,7 @@
             this.based_onTextBox.Location = new System.Drawing.Point(127, 59);
             this.based_onTextBox.Multiline = true;
             this.based_onTextBox.Name = "based_onTextBox";
-            this.based_onTextBox.Size = new System.Drawing.Size(160, 45);
+            this.based_onTextBox.Size = new System.Drawing.Size(173, 41);
             this.based_onTextBox.TabIndex = 29;
             // 
             // descriptionTextBox
@@ -850,15 +863,15 @@
             this.descriptionTextBox.Location = new System.Drawing.Point(127, 90);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(184, 70);
+            this.descriptionTextBox.Size = new System.Drawing.Size(184, 62);
             this.descriptionTextBox.TabIndex = 31;
             // 
             // imagePictureBox
             // 
             this.imagePictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.artifactsBindingSource, "Image", true));
-            this.imagePictureBox.Location = new System.Drawing.Point(17, 24);
+            this.imagePictureBox.Location = new System.Drawing.Point(20, 23);
             this.imagePictureBox.Name = "imagePictureBox";
-            this.imagePictureBox.Size = new System.Drawing.Size(252, 149);
+            this.imagePictureBox.Size = new System.Drawing.Size(284, 171);
             this.imagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imagePictureBox.TabIndex = 33;
             this.imagePictureBox.TabStop = false;
@@ -949,9 +962,9 @@
             this.groupBox1.Controls.Add(location_Place_Name_Label);
             this.groupBox1.Controls.Add(this.location_district_ComboBox);
             this.groupBox1.Controls.Add(location_district_Label);
-            this.groupBox1.Location = new System.Drawing.Point(75, 63);
+            this.groupBox1.Location = new System.Drawing.Point(99, 146);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(263, 129);
+            this.groupBox1.Size = new System.Drawing.Size(317, 117);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Location";
@@ -966,12 +979,21 @@
             this.groupBox2.Controls.Add(descriptionLabel);
             this.groupBox2.Controls.Add(materialLabel);
             this.groupBox2.Controls.Add(this.descriptionTextBox);
-            this.groupBox2.Location = new System.Drawing.Point(75, 205);
+            this.groupBox2.Location = new System.Drawing.Point(531, 146);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(331, 254);
+            this.groupBox2.Size = new System.Drawing.Size(317, 241);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Attributes";
+            // 
+            // usageTextBox
+            // 
+            this.usageTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Usage", true));
+            this.usageTextBox.Location = new System.Drawing.Point(127, 159);
+            this.usageTextBox.Multiline = true;
+            this.usageTextBox.Name = "usageTextBox";
+            this.usageTextBox.Size = new System.Drawing.Size(183, 65);
+            this.usageTextBox.TabIndex = 40;
             // 
             // groupBox3
             // 
@@ -985,9 +1007,9 @@
             this.groupBox3.Controls.Add(this.lengthTextBox);
             this.groupBox3.Controls.Add(heightLabel);
             this.groupBox3.Controls.Add(lengthLabel);
-            this.groupBox3.Location = new System.Drawing.Point(443, 118);
+            this.groupBox3.Location = new System.Drawing.Point(99, 401);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(269, 184);
+            this.groupBox3.Size = new System.Drawing.Size(317, 112);
             this.groupBox3.TabIndex = 37;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dimentions";
@@ -998,9 +1020,9 @@
             this.groupBox4.Controls.Add(this.based_onTextBox);
             this.groupBox4.Controls.Add(this.chronologyComboBox);
             this.groupBox4.Controls.Add(chronologyLabel);
-            this.groupBox4.Location = new System.Drawing.Point(434, 317);
+            this.groupBox4.Location = new System.Drawing.Point(99, 276);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(317, 126);
+            this.groupBox4.Size = new System.Drawing.Size(317, 111);
             this.groupBox4.TabIndex = 38;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chronology";
@@ -1010,23 +1032,23 @@
             this.groupBox5.Controls.Add(this.textBox1);
             this.groupBox5.Controls.Add(this.button1);
             this.groupBox5.Controls.Add(this.imagePictureBox);
-            this.groupBox5.Location = new System.Drawing.Point(814, 107);
+            this.groupBox5.Location = new System.Drawing.Point(948, 206);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(284, 218);
+            this.groupBox5.Size = new System.Drawing.Size(329, 244);
             this.groupBox5.TabIndex = 39;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Image";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 191);
+            this.textBox1.Location = new System.Drawing.Point(20, 211);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 20);
+            this.textBox1.Size = new System.Drawing.Size(203, 20);
             this.textBox1.TabIndex = 35;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(194, 189);
+            this.button1.Location = new System.Drawing.Point(229, 209);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 34;
@@ -1038,51 +1060,34 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // usageLabel
-            // 
-            usageLabel.AutoSize = true;
-            usageLabel.Location = new System.Drawing.Point(8, 174);
-            usageLabel.Name = "usageLabel";
-            usageLabel.Size = new System.Drawing.Size(41, 13);
-            usageLabel.TabIndex = 39;
-            usageLabel.Text = "Usage:";
-            // 
-            // usageTextBox
-            // 
-            this.usageTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Usage", true));
-            this.usageTextBox.Location = new System.Drawing.Point(128, 174);
-            this.usageTextBox.Multiline = true;
-            this.usageTextBox.Name = "usageTextBox";
-            this.usageTextBox.Size = new System.Drawing.Size(183, 74);
-            this.usageTextBox.TabIndex = 40;
-            // 
-            // bibliographyLabel
-            // 
-            bibliographyLabel.AutoSize = true;
-            bibliographyLabel.Location = new System.Drawing.Point(815, 375);
-            bibliographyLabel.Name = "bibliographyLabel";
-            bibliographyLabel.Size = new System.Drawing.Size(67, 13);
-            bibliographyLabel.TabIndex = 40;
-            bibliographyLabel.Text = "Bibliography:";
-            // 
             // bibliographyTextBox
             // 
             this.bibliographyTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Bibliography", true));
-            this.bibliographyTextBox.Location = new System.Drawing.Point(888, 373);
+            this.bibliographyTextBox.Location = new System.Drawing.Point(129, 22);
             this.bibliographyTextBox.Multiline = true;
             this.bibliographyTextBox.Name = "bibliographyTextBox";
-            this.bibliographyTextBox.Size = new System.Drawing.Size(195, 80);
+            this.bibliographyTextBox.Size = new System.Drawing.Size(188, 72);
             this.bibliographyTextBox.TabIndex = 41;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.bibliographyTextBox);
+            this.groupBox6.Location = new System.Drawing.Point(531, 401);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(326, 112);
+            this.groupBox6.TabIndex = 42;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Bibliography";
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1375, 733);
+            this.ClientSize = new System.Drawing.Size(1375, 688);
             this.ContextMenuStrip = this.contextMenuStrip1;
-            this.Controls.Add(bibliographyLabel);
-            this.Controls.Add(this.bibliographyTextBox);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -1121,6 +1126,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1217,6 +1224,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox usageTextBox;
         private System.Windows.Forms.TextBox bibliographyTextBox;
+        private System.Windows.Forms.GroupBox groupBox6;
     }
 }
 

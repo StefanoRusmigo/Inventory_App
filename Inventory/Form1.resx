@@ -162,6 +162,9 @@
   <metadata name="descriptionLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <metadata name="usageLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <metadata name="artifactsBindingNavigator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
@@ -247,12 +250,12 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFpSURBVDhPtVJNRwVhGJ0+KIl2EZGkRZvUIhKZosWY5nvM
-        ImJaJFpGiruZv5C+6CdEm0u/IZGWcbVqES2KW1pE6eM8r3Obtztz06bD4/Gec57zPu8Y418QRdFoEARr
+        ImJaJFpGiruZv5C+6CdEm0u/IZGWcbVqES2KW1pE6eM8r3Obtztz06bD4/Gec54zz/sa418QRdFoEARr
         qCwMw02c55Mk6aA2BK6ijM0Q0ff9Uxg+m8vzvBsErkvHucaRHHEcj0O414YeUGeomsY16mcA1utlsoh1
-        3LTUWFmAs6MNFwNAVETA+i/YZJK0guu6wwi41YZLA64o7JD6BkInwO+h72u1RdkwLMvqguFDAvARF0i3
-        BLYZ4ffqVwTe2ifDrClF/gIEXNC7Tcpos237WUiIKblSmKbZ6TjOI73LpFVqlannWZa1ky4Ab18RHy58
-        Rx8krYQ5BkjyblkItGnUE33HpHOAPKQoIfLOVQTPoC+ijrD6q2jg7tAHOJZDfhwMHoipVWH4Gp4xjpQD
-        plmYT1B1Dr6Bu0TfSNO0m7a/AWv36L90EYbxBd5C02mWbeguAAAAAElFTkSuQmCC
+        fGmpsbIAZ0cbLgaAqIiA9V+wySRpBdd1hxFwqw2XBlxR2CH1DYROgN9D39dqi7JhWJbVBcOHBOARF0i3
+        BLYZ4Xv1KwJ37ZNh1pQifwECLujdJmW02bb9LCTElFwpTNPsdBznkd5l0iq1ytTzLMvaSReAu6+ID9d+
+        Rx8krYQ5BkjyblkItGnUE33HpHOAPKQoIXLPVQTPoC+ijrD6q2jg7tAHOJZDfhwMHoipVWH4Gp4xjpQD
+        plmYT1B1Dr6Bu0TfSNO0m7a/AWv36L90EYbxBdZi02Mf22y3AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -306,8 +309,17 @@
         TgDQASA1MVpwzwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="database1DataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="locationsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>525, 56</value>
+  </metadata>
+  <metadata name="locationsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>525, 56</value>
+  </metadata>
+  <metadata name="database1DataSet11.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>362, 56</value>
   </metadata>
   <metadata name="database1DataSet11.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>362, 56</value>
@@ -315,8 +327,17 @@
   <metadata name="artifactTypesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>545, 95</value>
   </metadata>
+  <metadata name="artifactTypesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>545, 95</value>
+  </metadata>
   <metadata name="materialsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>191, 95</value>
+  </metadata>
+  <metadata name="materialsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>191, 95</value>
+  </metadata>
+  <metadata name="chronologiesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>211, 134</value>
   </metadata>
   <metadata name="chronologiesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>211, 134</value>
@@ -342,16 +363,10 @@
   <metadata name="chronologiesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>412, 134</value>
   </metadata>
-  <metadata name="usageLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>607, 134</value>
   </metadata>
-  <metadata name="bibliographyLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>86</value>
+    <value>25</value>
   </metadata>
 </root>

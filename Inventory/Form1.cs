@@ -31,9 +31,20 @@ namespace Inventory
 
         private void artifactsBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
-            this.Validate();
-            this.artifactsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.database1DataSet1);
+            try
+            {
+                this.Validate();
+                this.artifactsBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.database1DataSet1);
+                textBox1.Clear();
+                System.Windows.Forms.MessageBox.Show("Updated Record");
+           
+            }
+    
+             catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -207,6 +218,27 @@ namespace Inventory
         }
 
         private void descriptionLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usageLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
 
         }
