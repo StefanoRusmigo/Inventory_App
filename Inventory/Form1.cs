@@ -38,6 +38,7 @@ namespace Inventory
                 this.Validate();
                 this.artifactsBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.database1DataSet1);
+                imagePictureBox.ImageLocation = textBox1.Text;
                 textBox1.Clear();
                 System.Windows.Forms.MessageBox.Show("Updated Record");
            
@@ -245,100 +246,7 @@ namespace Inventory
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            object oMissing = System.Reflection.Missing.Value;
-            object oEndOfDoc = "\\endofdoc"; /* \endofdoc is a predefined bookmark */
-
-            //Start Word and create a new document.
-            Word._Application oWord;
-            Word._Document oDoc;
-            oWord = new Word.Application();
-            oWord.Visible = true;
-            oDoc = oWord.Documents.Add(ref oMissing, ref oMissing,
-            ref oMissing, ref oMissing);
-
-            //Insert a paragraph at the beginning of the document.
-            Word.Paragraph oPara1;
-            oPara1 = oDoc.Content.Paragraphs.Add(ref oMissing);
-            oPara1.Range.Text = "\bArtifact Code: " + artifact_codeTextBox.Text + Environment.NewLine +
-            "Museum Code: " + museum_codeTextBox.Text; 
-            oPara1.Range.Font.Bold = 1;
-            oPara1.Format.SpaceAfter = 6;    //6 pt spacing after paragraph.
-            oPara1.Range.InsertParagraphAfter();
-
-
-
-            //Insert another paragraph.
-            object oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-
-            Word.Paragraph oPara3;
-            oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-            oPara3 = oDoc.Content.Paragraphs.Add(ref oRng);
-            oPara3.Range.InsertParagraphBefore();
-      
-            oPara3.Range.Text = "Location:" + System.Environment.NewLine + 
-                "Location(district): " + location_district_ComboBox.Text + System.Environment.NewLine +
-                "Location(place name): " + location_Place_Name_TextBox.Text + Environment.NewLine +
-                "Coordinates: " + gPS_coordinatesTextBox.Text ;
-            oPara3.Range.Font.Bold = 0;
-            oPara3.Format.SpaceAfter = 6;
-            oPara3.Range.InsertParagraphAfter();
-
-            //Insert another paragraph.
-            Word.Paragraph oPara4;
-            oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-            oPara4 = oDoc.Content.Paragraphs.Add(ref oRng);
-            oPara4.Range.InsertParagraphBefore();
-            oPara4.Range.Text = "Attributes:" + System.Environment.NewLine +
-                "Material: " + materialComboBox.Text + System.Environment.NewLine +
-                "Type of the artifact: " + type_of_the_artifactComboBox.Text + Environment.NewLine +
-                "Description: " + descriptionTextBox.Text + Environment.NewLine +
-                "Usage: " + usageTextBox.Text;
-            oPara4.Format.SpaceAfter =6;
-            oPara4.Range.InsertParagraphAfter();
-
-
-
-            //Insert another paragraph.
-            Word.Paragraph oPara5;
-            oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-            oPara5 = oDoc.Content.Paragraphs.Add(ref oRng);
-            oPara5.Range.InsertParagraphBefore();
-            oPara5.Range.Text = "Chronology:" + Environment.NewLine +
-                "Period: " + chronologyComboBox.Text + Environment.NewLine +
-                "Based on: " + based_onTextBox.Text;
-            oPara5.Format.SpaceAfter = 6;
-            oPara5.Range.InsertParagraphAfter();
-
-
-            //Insert another paragraph.
-            Word.Paragraph oPara6;
-            oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-            oPara6 = oDoc.Content.Paragraphs.Add(ref oRng);
-            oPara6.Range.InsertParagraphBefore();
-            oPara6.Range.Text = "Dimentions:" + Environment.NewLine +
-                "Height: " + heightTextBox.Text + Environment.NewLine +
-                "Width: " + widthTextBox.Text + Environment.NewLine +
-                "Length: " + lengthTextBox.Text + Environment.NewLine +
-                "Thickness: " + thicknessTextBox.Text + Environment.NewLine +
-                "Weight: " + weightTextBox.Text;
-            oPara6.Format.SpaceAfter = 6;
-            oPara6.Range.InsertParagraphAfter();
-
-
-            //Insert another paragraph.
-            Word.Paragraph oPara7;
-            oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-            oPara7 = oDoc.Content.Paragraphs.Add(ref oRng);
-            oPara7.Range.InsertParagraphBefore();
-            oPara7.Range.Text = "Bibliography: " + bibliographyTextBox.Text;
-            oPara7.Format.SpaceAfter = 6;
-            oPara7.Range.InsertParagraphAfter();
-
-            //Close this form.
-            this.Close();
-        }
+        
 
         private void artifact_codeTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -382,6 +290,55 @@ namespace Inventory
             object saveWithDocument = true;
             string pictureName = imagePictureBox.ImageLocation;
             oDoc.InlineShapes.AddPicture(pictureName, ref oMissing, ref saveWithDocument, ref oRange);
+
+            object oBookMark3 = "district";
+            Word.Bookmark bkm3 = oDoc.Bookmarks.get_Item(ref oBookMark3);
+            bkm3.Range.Text = location_district_ComboBox.Text;
+
+            object oBookMark4 = "place_name";
+            Word.Bookmark bkm4 = oDoc.Bookmarks.get_Item(ref oBookMark4);
+            bkm4.Range.Text = location_Place_Name_TextBox.Text;
+
+            object oBookMark5 = "coordinates";
+            Word.Bookmark bkm5 = oDoc.Bookmarks.get_Item(ref oBookMark5);
+            bkm5.Range.Text = gPS_coordinatesTextBox.Text;
+
+            object oBookMark6 = "material";
+            Word.Bookmark bkm6 = oDoc.Bookmarks.get_Item(ref oBookMark6);
+            bkm6.Range.Text = materialComboBox.Text;
+
+            object oBookMark7 = "type";
+            Word.Bookmark bkm7 = oDoc.Bookmarks.get_Item(ref oBookMark7);
+            bkm7.Range.Text = type_of_the_artifactComboBox.Text;
+
+            object oBookMark8 = "chrono";
+            Word.Bookmark bkm8 = oDoc.Bookmarks.get_Item(ref oBookMark8);
+            bkm8.Range.Text = chronologyComboBox.Text;
+
+
+            object oBookMark9 = "based_on";
+            Word.Bookmark bkm9 = oDoc.Bookmarks.get_Item(ref oBookMark9);
+            bkm9.Range.Text = based_onTextBox.Text;
+
+            object oBookMark10 = "height";
+            Word.Bookmark bkm10 = oDoc.Bookmarks.get_Item(ref oBookMark10);
+            bkm10.Range.Text = heightTextBox.Text;
+
+            object oBookMark11 = "width";
+            Word.Bookmark bkm11 = oDoc.Bookmarks.get_Item(ref oBookMark11);
+            bkm11.Range.Text = widthTextBox.Text;
+
+            object oBookMark12 = "length";
+            Word.Bookmark bkm12 = oDoc.Bookmarks.get_Item(ref oBookMark12);
+            bkm12.Range.Text = lengthTextBox.Text;
+
+            object oBookMark13 = "thick";
+            Word.Bookmark bkm13 = oDoc.Bookmarks.get_Item(ref oBookMark13);
+            bkm13.Range.Text = thicknessTextBox.Text;
+
+            object oBookMark14 = "weight";
+            Word.Bookmark bkm14 = oDoc.Bookmarks.get_Item(ref oBookMark14);
+            bkm14.Range.Text = weightTextBox.Text;
         }
     }
 }
