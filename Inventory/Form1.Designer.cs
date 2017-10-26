@@ -36,16 +36,16 @@
             System.Windows.Forms.Label gPS_coordinatesLabel;
             System.Windows.Forms.Label type_of_the_artifactLabel;
             System.Windows.Forms.Label materialLabel;
-            System.Windows.Forms.Label heightLabel;
-            System.Windows.Forms.Label lengthLabel;
-            System.Windows.Forms.Label thicknessLabel;
-            System.Windows.Forms.Label widthLabel;
-            System.Windows.Forms.Label weightLabel;
             System.Windows.Forms.Label chronologyLabel;
             System.Windows.Forms.Label based_onLabel;
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label usageLabel;
+            System.Windows.Forms.Label heightLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.Label widthLabel;
+            System.Windows.Forms.Label thicknessLabel;
+            System.Windows.Forms.Label lengthLabel;
+            System.Windows.Forms.Label weightLabel;
             this.artifactsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.artifactsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -79,19 +79,6 @@
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.artifactsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artifact_codeTextBox = new System.Windows.Forms.TextBox();
             this.museum_codeTextBox = new System.Windows.Forms.TextBox();
             this.location_district_ComboBox = new System.Windows.Forms.ComboBox();
@@ -103,11 +90,6 @@
             this.artifactTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialComboBox = new System.Windows.Forms.ComboBox();
             this.materialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.heightTextBox = new System.Windows.Forms.TextBox();
-            this.lengthTextBox = new System.Windows.Forms.TextBox();
-            this.thicknessTextBox = new System.Windows.Forms.TextBox();
-            this.widthTextBox = new System.Windows.Forms.TextBox();
-            this.weightTextBox = new System.Windows.Forms.TextBox();
             this.chronologyComboBox = new System.Windows.Forms.ComboBox();
             this.chronologiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.based_onTextBox = new System.Windows.Forms.TextBox();
@@ -128,7 +110,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.usageTextBox = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -137,6 +118,25 @@
             this.bibliographyTextBox = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.heightTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.widthTextBox = new System.Windows.Forms.TextBox();
+            this.thicknessTextBox = new System.Windows.Forms.TextBox();
+            this.lengthTextBox = new System.Windows.Forms.TextBox();
+            this.weightTextBox = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Width = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Length = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thickness = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             artifact_codeLabel = new System.Windows.Forms.Label();
             museum_codeLabel = new System.Windows.Forms.Label();
             location_district_Label = new System.Windows.Forms.Label();
@@ -144,15 +144,15 @@
             gPS_coordinatesLabel = new System.Windows.Forms.Label();
             type_of_the_artifactLabel = new System.Windows.Forms.Label();
             materialLabel = new System.Windows.Forms.Label();
-            heightLabel = new System.Windows.Forms.Label();
-            lengthLabel = new System.Windows.Forms.Label();
-            thicknessLabel = new System.Windows.Forms.Label();
-            widthLabel = new System.Windows.Forms.Label();
-            weightLabel = new System.Windows.Forms.Label();
             chronologyLabel = new System.Windows.Forms.Label();
             based_onLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             usageLabel = new System.Windows.Forms.Label();
+            heightLabel = new System.Windows.Forms.Label();
+            widthLabel = new System.Windows.Forms.Label();
+            thicknessLabel = new System.Windows.Forms.Label();
+            lengthLabel = new System.Windows.Forms.Label();
+            weightLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.artifactsBindingNavigator)).BeginInit();
             this.artifactsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.artifactsBindingSource)).BeginInit();
@@ -167,10 +167,10 @@
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // artifact_codeLabel
@@ -238,51 +238,6 @@
             materialLabel.TabIndex = 14;
             materialLabel.Text = "Material:";
             // 
-            // heightLabel
-            // 
-            heightLabel.AutoSize = true;
-            heightLabel.Location = new System.Drawing.Point(10, 32);
-            heightLabel.Name = "heightLabel";
-            heightLabel.Size = new System.Drawing.Size(41, 13);
-            heightLabel.TabIndex = 16;
-            heightLabel.Text = "Height:";
-            // 
-            // lengthLabel
-            // 
-            lengthLabel.AutoSize = true;
-            lengthLabel.Location = new System.Drawing.Point(10, 59);
-            lengthLabel.Name = "lengthLabel";
-            lengthLabel.Size = new System.Drawing.Size(43, 13);
-            lengthLabel.TabIndex = 18;
-            lengthLabel.Text = "Length:";
-            // 
-            // thicknessLabel
-            // 
-            thicknessLabel.AutoSize = true;
-            thicknessLabel.Location = new System.Drawing.Point(177, 59);
-            thicknessLabel.Name = "thicknessLabel";
-            thicknessLabel.Size = new System.Drawing.Size(59, 13);
-            thicknessLabel.TabIndex = 20;
-            thicknessLabel.Text = "Thickness:";
-            // 
-            // widthLabel
-            // 
-            widthLabel.AutoSize = true;
-            widthLabel.Location = new System.Drawing.Point(177, 32);
-            widthLabel.Name = "widthLabel";
-            widthLabel.Size = new System.Drawing.Size(38, 13);
-            widthLabel.TabIndex = 22;
-            widthLabel.Text = "Width:";
-            // 
-            // weightLabel
-            // 
-            weightLabel.AutoSize = true;
-            weightLabel.Location = new System.Drawing.Point(10, 86);
-            weightLabel.Name = "weightLabel";
-            weightLabel.Size = new System.Drawing.Size(44, 13);
-            weightLabel.TabIndex = 24;
-            weightLabel.Text = "Weight:";
-            // 
             // chronologyLabel
             // 
             chronologyLabel.AutoSize = true;
@@ -320,6 +275,15 @@
             usageLabel.TabIndex = 39;
             usageLabel.Text = "Usage:";
             usageLabel.Click += new System.EventHandler(this.usageLabel_Click);
+            // 
+            // heightLabel
+            // 
+            heightLabel.AutoSize = true;
+            heightLabel.Location = new System.Drawing.Point(10, 32);
+            heightLabel.Name = "heightLabel";
+            heightLabel.Size = new System.Drawing.Size(41, 13);
+            heightLabel.TabIndex = 16;
+            heightLabel.Text = "Height:";
             // 
             // artifactsBindingNavigator
             // 
@@ -610,95 +574,17 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13});
+            this.Width,
+            this.Length,
+            this.Thickness,
+            this.Weight});
             this.artifactsDataGridView.DataSource = this.artifactsBindingSource;
             this.artifactsDataGridView.Location = new System.Drawing.Point(7, 523);
             this.artifactsDataGridView.Name = "artifactsDataGridView";
             this.artifactsDataGridView.Size = new System.Drawing.Size(1348, 175);
             this.artifactsDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Artifact_code";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Artifact_code";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Museum_code";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Museum_code";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Location(district)";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Location(district)";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Location(Place Name)";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Location(Place Name)";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "GPS_coordinates";
-            this.dataGridViewTextBoxColumn5.HeaderText = "GPS_coordinates";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Type_of_the_artifact";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Type_of_the_artifact";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Material";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Material";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Height";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Height";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Length";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Length";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Thickness";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Thickness";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Width";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Width";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Weight";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Weight";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Chronology";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Chronology";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
             // artifact_codeTextBox
             // 
@@ -792,46 +678,6 @@
             // 
             this.materialsBindingSource.DataMember = "Materials";
             this.materialsBindingSource.DataSource = this.database1DataSet11;
-            // 
-            // heightTextBox
-            // 
-            this.heightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Height", true));
-            this.heightTextBox.Location = new System.Drawing.Point(93, 32);
-            this.heightTextBox.Name = "heightTextBox";
-            this.heightTextBox.Size = new System.Drawing.Size(44, 20);
-            this.heightTextBox.TabIndex = 17;
-            // 
-            // lengthTextBox
-            // 
-            this.lengthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Length", true));
-            this.lengthTextBox.Location = new System.Drawing.Point(93, 59);
-            this.lengthTextBox.Name = "lengthTextBox";
-            this.lengthTextBox.Size = new System.Drawing.Size(44, 20);
-            this.lengthTextBox.TabIndex = 19;
-            // 
-            // thicknessTextBox
-            // 
-            this.thicknessTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Thickness", true));
-            this.thicknessTextBox.Location = new System.Drawing.Point(260, 59);
-            this.thicknessTextBox.Name = "thicknessTextBox";
-            this.thicknessTextBox.Size = new System.Drawing.Size(44, 20);
-            this.thicknessTextBox.TabIndex = 21;
-            // 
-            // widthTextBox
-            // 
-            this.widthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Width", true));
-            this.widthTextBox.Location = new System.Drawing.Point(260, 32);
-            this.widthTextBox.Name = "widthTextBox";
-            this.widthTextBox.Size = new System.Drawing.Size(44, 20);
-            this.widthTextBox.TabIndex = 23;
-            // 
-            // weightTextBox
-            // 
-            this.weightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Weight", true));
-            this.weightTextBox.Location = new System.Drawing.Point(93, 86);
-            this.weightTextBox.Name = "weightTextBox";
-            this.weightTextBox.Size = new System.Drawing.Size(44, 20);
-            this.weightTextBox.TabIndex = 25;
             // 
             // chronologyComboBox
             // 
@@ -1000,26 +846,6 @@
             this.usageTextBox.Size = new System.Drawing.Size(183, 65);
             this.usageTextBox.TabIndex = 40;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.heightTextBox);
-            this.groupBox3.Controls.Add(this.weightTextBox);
-            this.groupBox3.Controls.Add(weightLabel);
-            this.groupBox3.Controls.Add(this.widthTextBox);
-            this.groupBox3.Controls.Add(widthLabel);
-            this.groupBox3.Controls.Add(this.thicknessTextBox);
-            this.groupBox3.Controls.Add(thicknessLabel);
-            this.groupBox3.Controls.Add(this.lengthTextBox);
-            this.groupBox3.Controls.Add(heightLabel);
-            this.groupBox3.Controls.Add(lengthLabel);
-            this.groupBox3.Location = new System.Drawing.Point(99, 401);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(317, 112);
-            this.groupBox3.TabIndex = 37;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Attributes";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(based_onLabel);
@@ -1097,12 +923,186 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // heightTextBox
+            // 
+            this.heightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Height", true));
+            this.heightTextBox.Location = new System.Drawing.Point(93, 32);
+            this.heightTextBox.Name = "heightTextBox";
+            this.heightTextBox.Size = new System.Drawing.Size(44, 20);
+            this.heightTextBox.TabIndex = 17;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(weightLabel);
+            this.groupBox3.Controls.Add(this.weightTextBox);
+            this.groupBox3.Controls.Add(lengthLabel);
+            this.groupBox3.Controls.Add(this.lengthTextBox);
+            this.groupBox3.Controls.Add(thicknessLabel);
+            this.groupBox3.Controls.Add(this.thicknessTextBox);
+            this.groupBox3.Controls.Add(widthLabel);
+            this.groupBox3.Controls.Add(this.widthTextBox);
+            this.groupBox3.Controls.Add(this.heightTextBox);
+            this.groupBox3.Controls.Add(heightLabel);
+            this.groupBox3.Location = new System.Drawing.Point(99, 401);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(317, 112);
+            this.groupBox3.TabIndex = 37;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Attributes";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // widthLabel
+            // 
+            widthLabel.AutoSize = true;
+            widthLabel.Location = new System.Drawing.Point(166, 41);
+            widthLabel.Name = "widthLabel";
+            widthLabel.Size = new System.Drawing.Size(38, 13);
+            widthLabel.TabIndex = 17;
+            widthLabel.Text = "Width:";
+            // 
+            // widthTextBox
+            // 
+            this.widthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Width", true));
+            this.widthTextBox.Location = new System.Drawing.Point(224, 34);
+            this.widthTextBox.Name = "widthTextBox";
+            this.widthTextBox.Size = new System.Drawing.Size(44, 20);
+            this.widthTextBox.TabIndex = 18;
+            // 
+            // thicknessLabel
+            // 
+            thicknessLabel.AutoSize = true;
+            thicknessLabel.Location = new System.Drawing.Point(10, 91);
+            thicknessLabel.Name = "thicknessLabel";
+            thicknessLabel.Size = new System.Drawing.Size(59, 13);
+            thicknessLabel.TabIndex = 18;
+            thicknessLabel.Text = "Thickness:";
+            // 
+            // thicknessTextBox
+            // 
+            this.thicknessTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Thickness", true));
+            this.thicknessTextBox.Location = new System.Drawing.Point(93, 84);
+            this.thicknessTextBox.Name = "thicknessTextBox";
+            this.thicknessTextBox.Size = new System.Drawing.Size(44, 20);
+            this.thicknessTextBox.TabIndex = 19;
+            // 
+            // lengthLabel
+            // 
+            lengthLabel.AutoSize = true;
+            lengthLabel.Location = new System.Drawing.Point(10, 62);
+            lengthLabel.Name = "lengthLabel";
+            lengthLabel.Size = new System.Drawing.Size(43, 13);
+            lengthLabel.TabIndex = 19;
+            lengthLabel.Text = "Length:";
+            // 
+            // lengthTextBox
+            // 
+            this.lengthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Length", true));
+            this.lengthTextBox.Location = new System.Drawing.Point(93, 58);
+            this.lengthTextBox.Name = "lengthTextBox";
+            this.lengthTextBox.Size = new System.Drawing.Size(44, 20);
+            this.lengthTextBox.TabIndex = 20;
+            // 
+            // weightLabel
+            // 
+            weightLabel.AutoSize = true;
+            weightLabel.Location = new System.Drawing.Point(166, 65);
+            weightLabel.Name = "weightLabel";
+            weightLabel.Size = new System.Drawing.Size(44, 13);
+            weightLabel.TabIndex = 20;
+            weightLabel.Text = "Weight:";
+            // 
+            // weightTextBox
+            // 
+            this.weightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Weight", true));
+            this.weightTextBox.Location = new System.Drawing.Point(224, 62);
+            this.weightTextBox.Name = "weightTextBox";
+            this.weightTextBox.Size = new System.Drawing.Size(44, 20);
+            this.weightTextBox.TabIndex = 21;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Artifact_code";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Artifact_code";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Museum_code";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Museum_code";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Location(district)";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Location(district)";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Location(Place Name)";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Location(Place Name)";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "GPS_coordinates";
+            this.dataGridViewTextBoxColumn5.HeaderText = "GPS_coordinates";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Type_of_the_artifact";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Type_of_the_artifact";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Material";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Material";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Chronology";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Chronology";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Height";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Height";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // Width
+            // 
+            this.Width.DataPropertyName = "Width";
+            this.Width.HeaderText = "Width";
+            this.Width.Name = "Width";
+            // 
+            // Length
+            // 
+            this.Length.DataPropertyName = "Length";
+            this.Length.HeaderText = "Length";
+            this.Length.Name = "Length";
+            // 
+            // Thickness
+            // 
+            this.Thickness.DataPropertyName = "Thickness";
+            this.Thickness.HeaderText = "Thickness";
+            this.Thickness.Name = "Thickness";
+            // 
+            // Weight
+            // 
+            this.Weight.DataPropertyName = "Weight";
+            this.Weight.HeaderText = "Weight";
+            this.Weight.Name = "Weight";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1375, 688);
+            this.ClientSize = new System.Drawing.Size(1375, 698);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox6);
@@ -1138,14 +1138,14 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1194,11 +1194,6 @@
         private System.Windows.Forms.TextBox gPS_coordinatesTextBox;
         private System.Windows.Forms.ComboBox type_of_the_artifactComboBox;
         private System.Windows.Forms.ComboBox materialComboBox;
-        private System.Windows.Forms.TextBox heightTextBox;
-        private System.Windows.Forms.TextBox lengthTextBox;
-        private System.Windows.Forms.TextBox thicknessTextBox;
-        private System.Windows.Forms.TextBox widthTextBox;
-        private System.Windows.Forms.TextBox weightTextBox;
         private System.Windows.Forms.ComboBox chronologyComboBox;
         private System.Windows.Forms.TextBox based_onTextBox;
         private System.Windows.Forms.TextBox descriptionTextBox;
@@ -1210,19 +1205,10 @@
         private System.Windows.Forms.ToolStripMenuItem typeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem materialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chronologyToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private Database1DataSet1 database1DataSet11;
         private System.Windows.Forms.BindingSource locationsBindingSource;
         private Database1DataSet1TableAdapters.LocationsTableAdapter locationsTableAdapter;
@@ -1234,7 +1220,6 @@
         private Database1DataSet1TableAdapters.ChronologiesTableAdapter chronologiesTableAdapter;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox textBox1;
@@ -1244,6 +1229,25 @@
         private System.Windows.Forms.TextBox bibliographyTextBox;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox heightTextBox;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox weightTextBox;
+        private System.Windows.Forms.TextBox lengthTextBox;
+        private System.Windows.Forms.TextBox thicknessTextBox;
+        private System.Windows.Forms.TextBox widthTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Width;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Length;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Thickness;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Weight;
     }
 }
 
