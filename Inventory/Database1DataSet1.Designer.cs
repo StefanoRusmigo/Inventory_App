@@ -677,11 +677,11 @@ namespace Inventory {
                         string GPS_coordinates, 
                         string Type_of_the_artifact, 
                         string Material, 
-                        int Height, 
-                        int Length, 
-                        int Thickness, 
-                        int Width, 
-                        int Weight, 
+                        string Height, 
+                        string Length, 
+                        string Thickness, 
+                        string Width, 
+                        string Weight, 
                         string Chronology, 
                         string Based_on, 
                         string Description, 
@@ -778,15 +778,15 @@ namespace Inventory {
                 base.Columns.Add(this.columnType_of_the_artifact);
                 this.columnMaterial = new global::System.Data.DataColumn("Material", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaterial);
-                this.columnHeight = new global::System.Data.DataColumn("Height", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnHeight = new global::System.Data.DataColumn("Height", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHeight);
-                this.columnLength = new global::System.Data.DataColumn("Length", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnLength = new global::System.Data.DataColumn("Length", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLength);
-                this.columnThickness = new global::System.Data.DataColumn("Thickness", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnThickness = new global::System.Data.DataColumn("Thickness", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnThickness);
-                this.columnWidth = new global::System.Data.DataColumn("Width", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnWidth = new global::System.Data.DataColumn("Width", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnWidth);
-                this.columnWeight = new global::System.Data.DataColumn("Weight", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnWeight = new global::System.Data.DataColumn("Weight", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnWeight);
                 this.columnChronology = new global::System.Data.DataColumn("Chronology", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnChronology);
@@ -811,6 +811,11 @@ namespace Inventory {
                 this.columnGPS_coordinates.MaxLength = 50;
                 this.columnType_of_the_artifact.MaxLength = 100;
                 this.columnMaterial.MaxLength = 50;
+                this.columnHeight.MaxLength = 10;
+                this.columnLength.MaxLength = 10;
+                this.columnThickness.MaxLength = 10;
+                this.columnWidth.MaxLength = 10;
+                this.columnWeight.MaxLength = 10;
                 this.columnChronology.MaxLength = 100;
                 this.columnBased_on.MaxLength = 2147483647;
                 this.columnDescription.MaxLength = 2147483647;
@@ -2173,10 +2178,10 @@ namespace Inventory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Height {
+            public string Height {
                 get {
                     try {
-                        return ((int)(this[this.tableArtifacts.HeightColumn]));
+                        return ((string)(this[this.tableArtifacts.HeightColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Height\' in table \'Artifacts\' is DBNull.", e);
@@ -2189,10 +2194,10 @@ namespace Inventory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Length {
+            public string Length {
                 get {
                     try {
-                        return ((int)(this[this.tableArtifacts.LengthColumn]));
+                        return ((string)(this[this.tableArtifacts.LengthColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Length\' in table \'Artifacts\' is DBNull.", e);
@@ -2205,10 +2210,10 @@ namespace Inventory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Thickness {
+            public string Thickness {
                 get {
                     try {
-                        return ((int)(this[this.tableArtifacts.ThicknessColumn]));
+                        return ((string)(this[this.tableArtifacts.ThicknessColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Thickness\' in table \'Artifacts\' is DBNull.", e);
@@ -2221,10 +2226,10 @@ namespace Inventory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Width {
+            public string Width {
                 get {
                     try {
-                        return ((int)(this[this.tableArtifacts.WidthColumn]));
+                        return ((string)(this[this.tableArtifacts.WidthColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Width\' in table \'Artifacts\' is DBNull.", e);
@@ -2237,10 +2242,10 @@ namespace Inventory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Weight {
+            public string Weight {
                 get {
                     try {
-                        return ((int)(this[this.tableArtifacts.WeightColumn]));
+                        return ((string)(this[this.tableArtifacts.WeightColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Weight\' in table \'Artifacts\' is DBNull.", e);

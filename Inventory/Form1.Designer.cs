@@ -136,6 +136,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.bibliographyTextBox = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             artifact_codeLabel = new System.Windows.Forms.Label();
             museum_codeLabel = new System.Windows.Forms.Label();
             location_district_Label = new System.Windows.Forms.Label();
@@ -258,7 +260,7 @@
             // thicknessLabel
             // 
             thicknessLabel.AutoSize = true;
-            thicknessLabel.Location = new System.Drawing.Point(10, 85);
+            thicknessLabel.Location = new System.Drawing.Point(177, 59);
             thicknessLabel.Name = "thicknessLabel";
             thicknessLabel.Size = new System.Drawing.Size(59, 13);
             thicknessLabel.TabIndex = 20;
@@ -276,7 +278,7 @@
             // weightLabel
             // 
             weightLabel.AutoSize = true;
-            weightLabel.Location = new System.Drawing.Point(177, 58);
+            weightLabel.Location = new System.Drawing.Point(10, 86);
             weightLabel.Name = "weightLabel";
             weightLabel.Size = new System.Drawing.Size(44, 13);
             weightLabel.TabIndex = 24;
@@ -708,6 +710,7 @@
             this.artifact_codeTextBox.Size = new System.Drawing.Size(121, 38);
             this.artifact_codeTextBox.TabIndex = 3;
             this.artifact_codeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.artifact_codeTextBox.TextChanged += new System.EventHandler(this.artifact_codeTextBox_TextChanged);
             // 
             // museum_codeTextBox
             // 
@@ -810,7 +813,7 @@
             // thicknessTextBox
             // 
             this.thicknessTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Thickness", true));
-            this.thicknessTextBox.Location = new System.Drawing.Point(93, 85);
+            this.thicknessTextBox.Location = new System.Drawing.Point(260, 59);
             this.thicknessTextBox.Name = "thicknessTextBox";
             this.thicknessTextBox.Size = new System.Drawing.Size(44, 20);
             this.thicknessTextBox.TabIndex = 21;
@@ -826,7 +829,7 @@
             // weightTextBox
             // 
             this.weightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Weight", true));
-            this.weightTextBox.Location = new System.Drawing.Point(260, 58);
+            this.weightTextBox.Location = new System.Drawing.Point(93, 86);
             this.weightTextBox.Name = "weightTextBox";
             this.weightTextBox.Size = new System.Drawing.Size(44, 20);
             this.weightTextBox.TabIndex = 25;
@@ -854,6 +857,7 @@
             this.based_onTextBox.Location = new System.Drawing.Point(127, 59);
             this.based_onTextBox.Multiline = true;
             this.based_onTextBox.Name = "based_onTextBox";
+            this.based_onTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.based_onTextBox.Size = new System.Drawing.Size(173, 41);
             this.based_onTextBox.TabIndex = 29;
             // 
@@ -863,6 +867,7 @@
             this.descriptionTextBox.Location = new System.Drawing.Point(127, 90);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.descriptionTextBox.Size = new System.Drawing.Size(184, 62);
             this.descriptionTextBox.TabIndex = 31;
             // 
@@ -992,6 +997,7 @@
             this.usageTextBox.Location = new System.Drawing.Point(127, 159);
             this.usageTextBox.Multiline = true;
             this.usageTextBox.Name = "usageTextBox";
+            this.usageTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.usageTextBox.Size = new System.Drawing.Size(183, 65);
             this.usageTextBox.TabIndex = 40;
             // 
@@ -1013,6 +1019,7 @@
             this.groupBox3.TabIndex = 37;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dimentions";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // groupBox4
             // 
@@ -1066,6 +1073,7 @@
             this.bibliographyTextBox.Location = new System.Drawing.Point(129, 22);
             this.bibliographyTextBox.Multiline = true;
             this.bibliographyTextBox.Name = "bibliographyTextBox";
+            this.bibliographyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.bibliographyTextBox.Size = new System.Drawing.Size(188, 72);
             this.bibliographyTextBox.TabIndex = 41;
             // 
@@ -1080,6 +1088,26 @@
             this.groupBox6.Text = "Bibliography";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(60, 51);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 43;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(60, 80);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 44;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1087,6 +1115,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1375, 688);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -1225,6 +1255,8 @@
         private System.Windows.Forms.TextBox usageTextBox;
         private System.Windows.Forms.TextBox bibliographyTextBox;
         private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 
