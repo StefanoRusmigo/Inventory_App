@@ -344,6 +344,18 @@ namespace Inventory
             object oBookMark14 = "weight";
             Word.Bookmark bkm14 = oDoc.Bookmarks.get_Item(ref oBookMark14);
             bkm14.Range.Text = weightTextBox.Text;
+
+            object oBookMark15 = "description";
+            Word.Bookmark bkm15 = oDoc.Bookmarks.get_Item(ref oBookMark15);
+            bkm15.Range.Text = descriptionTextBox.Text;
+
+            object oBookMark16 = "usage";
+            Word.Bookmark bkm16 = oDoc.Bookmarks.get_Item(ref oBookMark16);
+            bkm16.Range.Text = usageTextBox.Text;
+
+            object oBookMark17 = "bibliography";
+            Word.Bookmark bkm17 = oDoc.Bookmarks.get_Item(ref oBookMark17);
+            bkm17.Range.Text = bibliographyTextBox.Text;
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
