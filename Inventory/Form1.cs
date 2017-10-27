@@ -64,6 +64,11 @@ namespace Inventory
             // TODO: This line of code loads data into the 'database1DataSet1.Artifacts' table. You can move, or remove it, as needed.
             this.artifactsTableAdapter.Fill(this.database1DataSet1.Artifacts);
 
+            //focus
+            artifact_codeTextBox.Focus();
+
+            textBox1.Clear();
+
             toolStripComboBox1.ComboBox.Items.Clear();
             toolStripComboBox2.ComboBox.Items.Clear();
             toolStripComboBox3.ComboBox.Items.Clear();
@@ -212,7 +217,7 @@ namespace Inventory
         {
             openFileDialog1.ShowDialog();
             textBox1.Text = openFileDialog1.FileName;
-            imagePictureBox.Image = Image.FromFile(textBox1.Text);
+             imagePictureBox.Image = Image.FromFile(textBox1.Text);
         }
 
         private void imagePictureBox_Click(object sender, EventArgs e)
@@ -246,7 +251,7 @@ namespace Inventory
 
         }
 
-        
+
 
         private void artifact_codeTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -339,6 +344,41 @@ namespace Inventory
             object oBookMark14 = "weight";
             Word.Bookmark bkm14 = oDoc.Bookmarks.get_Item(ref oBookMark14);
             bkm14.Range.Text = weightTextBox.Text;
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+    
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+
+            location_district_ComboBox.SelectedIndex = -1;
+            chronologyComboBox.SelectedIndex = -1;
+            materialComboBox.SelectedIndex = -1;
+            type_of_the_artifactComboBox.SelectedIndex = -1;
+            this.artifactsBindingSource.AddNew();
+
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+
+            DialogResult myResult;
+            myResult = MessageBox.Show("Are you really delete the item?", "Delete Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (myResult == DialogResult.OK)
+            {
+                this.artifactsBindingSource.RemoveCurrent();
+            }
+            else
+            {
+                //No delete
+            }
+          
+
         }
     }
 }

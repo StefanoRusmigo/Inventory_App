@@ -41,17 +41,15 @@
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label usageLabel;
             System.Windows.Forms.Label heightLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label widthLabel;
             System.Windows.Forms.Label thicknessLabel;
             System.Windows.Forms.Label lengthLabel;
             System.Windows.Forms.Label weightLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.artifactsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.artifactsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet1 = new Inventory.Database1DataSet1();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -60,6 +58,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.artifactsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -79,6 +78,19 @@
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.artifactsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artifact_codeTextBox = new System.Windows.Forms.TextBox();
             this.museum_codeTextBox = new System.Windows.Forms.TextBox();
             this.location_district_ComboBox = new System.Windows.Forms.ComboBox();
@@ -120,23 +132,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.heightTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.widthTextBox = new System.Windows.Forms.TextBox();
-            this.thicknessTextBox = new System.Windows.Forms.TextBox();
-            this.lengthTextBox = new System.Windows.Forms.TextBox();
             this.weightTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Width = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Length = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thickness = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lengthTextBox = new System.Windows.Forms.TextBox();
+            this.thicknessTextBox = new System.Windows.Forms.TextBox();
+            this.widthTextBox = new System.Windows.Forms.TextBox();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             artifact_codeLabel = new System.Windows.Forms.Label();
             museum_codeLabel = new System.Windows.Forms.Label();
             location_district_Label = new System.Windows.Forms.Label();
@@ -285,13 +285,49 @@
             heightLabel.TabIndex = 16;
             heightLabel.Text = "Height:";
             // 
+            // widthLabel
+            // 
+            widthLabel.AutoSize = true;
+            widthLabel.Location = new System.Drawing.Point(166, 41);
+            widthLabel.Name = "widthLabel";
+            widthLabel.Size = new System.Drawing.Size(38, 13);
+            widthLabel.TabIndex = 17;
+            widthLabel.Text = "Width:";
+            // 
+            // thicknessLabel
+            // 
+            thicknessLabel.AutoSize = true;
+            thicknessLabel.Location = new System.Drawing.Point(10, 91);
+            thicknessLabel.Name = "thicknessLabel";
+            thicknessLabel.Size = new System.Drawing.Size(59, 13);
+            thicknessLabel.TabIndex = 18;
+            thicknessLabel.Text = "Thickness:";
+            // 
+            // lengthLabel
+            // 
+            lengthLabel.AutoSize = true;
+            lengthLabel.Location = new System.Drawing.Point(10, 62);
+            lengthLabel.Name = "lengthLabel";
+            lengthLabel.Size = new System.Drawing.Size(43, 13);
+            lengthLabel.TabIndex = 19;
+            lengthLabel.Text = "Length:";
+            // 
+            // weightLabel
+            // 
+            weightLabel.AutoSize = true;
+            weightLabel.Location = new System.Drawing.Point(166, 65);
+            weightLabel.Name = "weightLabel";
+            weightLabel.Size = new System.Drawing.Size(44, 13);
+            weightLabel.TabIndex = 20;
+            weightLabel.Text = "Weight:";
+            // 
             // artifactsBindingNavigator
             // 
-            this.artifactsBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.artifactsBindingNavigator.AddNewItem = null;
             this.artifactsBindingNavigator.BackColor = System.Drawing.SystemColors.Control;
             this.artifactsBindingNavigator.BindingSource = this.artifactsBindingSource;
             this.artifactsBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.artifactsBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.artifactsBindingNavigator.DeleteItem = null;
             this.artifactsBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -302,8 +338,8 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
+            this.toolStripButton6,
+            this.toolStripButton7,
             this.artifactsBindingNavigatorSaveItem,
             this.toolStripButton5,
             this.toolStripSeparator1,
@@ -335,16 +371,6 @@
             this.artifactsBindingNavigator.Text = "bindingNavigator1";
             this.artifactsBindingNavigator.RefreshItems += new System.EventHandler(this.artifactsBindingNavigator_RefreshItems);
             // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
             // artifactsBindingSource
             // 
             this.artifactsBindingSource.DataMember = "Artifacts";
@@ -361,15 +387,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -430,6 +447,16 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton6.Text = "Add new";
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
             // artifactsBindingNavigatorSaveItem
             // 
@@ -576,15 +603,93 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn8,
-            this.Width,
-            this.Length,
-            this.Thickness,
-            this.Weight});
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17});
             this.artifactsDataGridView.DataSource = this.artifactsBindingSource;
             this.artifactsDataGridView.Location = new System.Drawing.Point(7, 523);
             this.artifactsDataGridView.Name = "artifactsDataGridView";
             this.artifactsDataGridView.Size = new System.Drawing.Size(1348, 175);
             this.artifactsDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Artifact_code";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Artifact_code";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Museum_code";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Museum_code";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Location(district)";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Location(district)";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Location(Place Name)";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Location(Place Name)";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "GPS_coordinates";
+            this.dataGridViewTextBoxColumn5.HeaderText = "GPS_coordinates";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Type_of_the_artifact";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Type_of_the_artifact";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Material";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Material";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Chronology";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Chronology";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Height";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Height";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Width";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Width";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Length";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Length";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "Thickness";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Thickness";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Weight";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Weight";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             // 
             // artifact_codeTextBox
             // 
@@ -951,48 +1056,13 @@
             this.groupBox3.Text = "Attributes";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // widthLabel
+            // weightTextBox
             // 
-            widthLabel.AutoSize = true;
-            widthLabel.Location = new System.Drawing.Point(166, 41);
-            widthLabel.Name = "widthLabel";
-            widthLabel.Size = new System.Drawing.Size(38, 13);
-            widthLabel.TabIndex = 17;
-            widthLabel.Text = "Width:";
-            // 
-            // widthTextBox
-            // 
-            this.widthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Width", true));
-            this.widthTextBox.Location = new System.Drawing.Point(224, 34);
-            this.widthTextBox.Name = "widthTextBox";
-            this.widthTextBox.Size = new System.Drawing.Size(44, 20);
-            this.widthTextBox.TabIndex = 18;
-            // 
-            // thicknessLabel
-            // 
-            thicknessLabel.AutoSize = true;
-            thicknessLabel.Location = new System.Drawing.Point(10, 91);
-            thicknessLabel.Name = "thicknessLabel";
-            thicknessLabel.Size = new System.Drawing.Size(59, 13);
-            thicknessLabel.TabIndex = 18;
-            thicknessLabel.Text = "Thickness:";
-            // 
-            // thicknessTextBox
-            // 
-            this.thicknessTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Thickness", true));
-            this.thicknessTextBox.Location = new System.Drawing.Point(93, 84);
-            this.thicknessTextBox.Name = "thicknessTextBox";
-            this.thicknessTextBox.Size = new System.Drawing.Size(44, 20);
-            this.thicknessTextBox.TabIndex = 19;
-            // 
-            // lengthLabel
-            // 
-            lengthLabel.AutoSize = true;
-            lengthLabel.Location = new System.Drawing.Point(10, 62);
-            lengthLabel.Name = "lengthLabel";
-            lengthLabel.Size = new System.Drawing.Size(43, 13);
-            lengthLabel.TabIndex = 19;
-            lengthLabel.Text = "Length:";
+            this.weightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Weight", true));
+            this.weightTextBox.Location = new System.Drawing.Point(224, 62);
+            this.weightTextBox.Name = "weightTextBox";
+            this.weightTextBox.Size = new System.Drawing.Size(44, 20);
+            this.weightTextBox.TabIndex = 21;
             // 
             // lengthTextBox
             // 
@@ -1002,100 +1072,31 @@
             this.lengthTextBox.Size = new System.Drawing.Size(44, 20);
             this.lengthTextBox.TabIndex = 20;
             // 
-            // weightLabel
+            // thicknessTextBox
             // 
-            weightLabel.AutoSize = true;
-            weightLabel.Location = new System.Drawing.Point(166, 65);
-            weightLabel.Name = "weightLabel";
-            weightLabel.Size = new System.Drawing.Size(44, 13);
-            weightLabel.TabIndex = 20;
-            weightLabel.Text = "Weight:";
+            this.thicknessTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Thickness", true));
+            this.thicknessTextBox.Location = new System.Drawing.Point(93, 84);
+            this.thicknessTextBox.Name = "thicknessTextBox";
+            this.thicknessTextBox.Size = new System.Drawing.Size(44, 20);
+            this.thicknessTextBox.TabIndex = 19;
             // 
-            // weightTextBox
+            // widthTextBox
             // 
-            this.weightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Weight", true));
-            this.weightTextBox.Location = new System.Drawing.Point(224, 62);
-            this.weightTextBox.Name = "weightTextBox";
-            this.weightTextBox.Size = new System.Drawing.Size(44, 20);
-            this.weightTextBox.TabIndex = 21;
+            this.widthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Width", true));
+            this.widthTextBox.Location = new System.Drawing.Point(224, 34);
+            this.widthTextBox.Name = "widthTextBox";
+            this.widthTextBox.Size = new System.Drawing.Size(44, 20);
+            this.widthTextBox.TabIndex = 18;
             // 
-            // dataGridViewTextBoxColumn1
+            // toolStripButton7
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Artifact_code";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Artifact_code";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Museum_code";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Museum_code";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Location(district)";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Location(district)";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Location(Place Name)";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Location(Place Name)";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "GPS_coordinates";
-            this.dataGridViewTextBoxColumn5.HeaderText = "GPS_coordinates";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Type_of_the_artifact";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Type_of_the_artifact";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Material";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Material";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Chronology";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Chronology";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Height";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Height";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // Width
-            // 
-            this.Width.DataPropertyName = "Width";
-            this.Width.HeaderText = "Width";
-            this.Width.Name = "Width";
-            // 
-            // Length
-            // 
-            this.Length.DataPropertyName = "Length";
-            this.Length.HeaderText = "Length";
-            this.Length.Name = "Length";
-            // 
-            // Thickness
-            // 
-            this.Thickness.DataPropertyName = "Thickness";
-            this.Thickness.HeaderText = "Thickness";
-            this.Thickness.Name = "Thickness";
-            // 
-            // Weight
-            // 
-            this.Weight.DataPropertyName = "Weight";
-            this.Weight.HeaderText = "Weight";
-            this.Weight.Name = "Weight";
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton7.Text = "Delete";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
             // Form1
             // 
@@ -1158,9 +1159,7 @@
         private Database1DataSet1TableAdapters.ArtifactsTableAdapter artifactsTableAdapter;
         private Database1DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator artifactsBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -1244,10 +1243,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Width;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Length;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Thickness;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Weight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
     }
 }
 
