@@ -265,6 +265,53 @@ namespace Inventory
 
         private void button3_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+    
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+
+            location_district_ComboBox.SelectedIndex = -1;
+            chronologyComboBox.SelectedIndex = -1;
+            materialComboBox.SelectedIndex = -1;
+            type_of_the_artifactComboBox.SelectedIndex = -1;
+            this.artifactsBindingSource.AddNew();
+
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+
+            DialogResult myResult;
+            myResult = MessageBox.Show("Are you really delete the item?", "Delete Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (myResult == DialogResult.OK)
+            {
+                this.artifactsBindingSource.RemoveCurrent();
+            }
+            else
+            {
+                //No delete
+            }
+          
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string a = Application.StartupPath;
+            MessageBox.Show(a);
+
+        }
+
+        private void exportInWordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             object oMissing = System.Reflection.Missing.Value;
             object oEndOfDoc = "\\endofdoc"; /* \endofdoc is a predefined bookmark */
 
@@ -276,7 +323,7 @@ namespace Inventory
             oWord.Visible = true;
 
 
-            object oTemplate = "C:/Users/Stefa/documents/visual studio 2017/Projects/inventory/Inventory/template.docx";
+            object oTemplate = "C:/Users/Stefa/Documents/Visual Studio 2017/Projects/Inventory/Inventory/template.docx";
             oDoc = oWord.Documents.Add(ref oTemplate, ref oMissing,
             ref oMissing, ref oMissing);
 
@@ -356,41 +403,6 @@ namespace Inventory
             object oBookMark17 = "bibliography";
             Word.Bookmark bkm17 = oDoc.Bookmarks.get_Item(ref oBookMark17);
             bkm17.Range.Text = bibliographyTextBox.Text;
-        }
-
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-    
-
-        private void toolStripButton6_Click(object sender, EventArgs e)
-        {
-
-            location_district_ComboBox.SelectedIndex = -1;
-            chronologyComboBox.SelectedIndex = -1;
-            materialComboBox.SelectedIndex = -1;
-            type_of_the_artifactComboBox.SelectedIndex = -1;
-            this.artifactsBindingSource.AddNew();
-
-        }
-
-        private void toolStripButton7_Click(object sender, EventArgs e)
-        {
-
-            DialogResult myResult;
-            myResult = MessageBox.Show("Are you really delete the item?", "Delete Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (myResult == DialogResult.OK)
-            {
-                this.artifactsBindingSource.RemoveCurrent();
-            }
-            else
-            {
-                //No delete
-            }
-          
-
         }
     }
 }

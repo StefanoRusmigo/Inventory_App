@@ -59,6 +59,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.artifactsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -129,14 +130,14 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.bibliographyTextBox = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.heightTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.weightTextBox = new System.Windows.Forms.TextBox();
             this.lengthTextBox = new System.Windows.Forms.TextBox();
             this.thicknessTextBox = new System.Windows.Forms.TextBox();
             this.widthTextBox = new System.Windows.Forms.TextBox();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.button2 = new System.Windows.Forms.Button();
+            this.exportInWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             artifact_codeLabel = new System.Windows.Forms.Label();
             museum_codeLabel = new System.Windows.Forms.Label();
             location_district_Label = new System.Windows.Forms.Label();
@@ -457,6 +458,15 @@
             this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton6.Text = "Add new";
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton7.Text = "Delete";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
             // artifactsBindingNavigatorSaveItem
             // 
@@ -850,9 +860,10 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
-            this.refreshToolStripMenuItem});
+            this.refreshToolStripMenuItem,
+            this.exportInWordToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(114, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(150, 70);
             // 
             // newToolStripMenuItem
             // 
@@ -861,7 +872,7 @@
             this.materialToolStripMenuItem,
             this.chronologyToolStripMenuItem});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -889,7 +900,7 @@
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
@@ -1018,16 +1029,6 @@
             this.groupBox6.Text = "Bibliography";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(60, 80);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 44;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // heightTextBox
             // 
             this.heightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Height", true));
@@ -1088,15 +1089,22 @@
             this.widthTextBox.Size = new System.Drawing.Size(44, 20);
             this.widthTextBox.TabIndex = 18;
             // 
-            // toolStripButton7
+            // button2
             // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton7.Text = "Delete";
-            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            this.button2.Location = new System.Drawing.Point(75, 52);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 45;
+            this.button2.Text = "Path";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // exportInWordToolStripMenuItem
+            // 
+            this.exportInWordToolStripMenuItem.Name = "exportInWordToolStripMenuItem";
+            this.exportInWordToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportInWordToolStripMenuItem.Text = "Export inWord";
+            this.exportInWordToolStripMenuItem.Click += new System.EventHandler(this.exportInWordToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1105,7 +1113,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1375, 698);
             this.ContextMenuStrip = this.contextMenuStrip1;
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -1227,7 +1235,6 @@
         private System.Windows.Forms.TextBox usageTextBox;
         private System.Windows.Forms.TextBox bibliographyTextBox;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox heightTextBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox weightTextBox;
@@ -1249,6 +1256,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem exportInWordToolStripMenuItem;
     }
 }
 
