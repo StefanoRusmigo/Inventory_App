@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Word = Microsoft.Office.Interop.Word;
 using System.Reflection;
+using System.IO;
 
 
 namespace Inventory
@@ -35,11 +36,24 @@ namespace Inventory
         {
             try
             {
+ 
+                if (!String.IsNullOrEmpty(textBox1.Text))
+                {
+                    
+                    string path1 = textBox1.Text;
+                    string fileName = Path.GetFileName(path1);
+                    string path2 = AppDomain.CurrentDomain.BaseDirectory + "images/" + artifact_codeTextBox.Text + ".jpg";
+                    File.Copy(path1, path2);
+                    imagePictureBox.Image = Image.FromFile(path2);
+
+
+                }
+                textBox1.Clear();
+
                 this.Validate();
                 this.artifactsBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.database1DataSet1);
-                imagePictureBox.ImageLocation = textBox1.Text;
-                textBox1.Clear();
+
                 System.Windows.Forms.MessageBox.Show("Updated Record");
 
             }
@@ -123,6 +137,7 @@ namespace Inventory
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
             artifactsBindingSource.Filter = "Artifact_code LIKE '" + "%" + toolStripTextBox1.Text + "%'";
+
 
         }
 
@@ -214,9 +229,18 @@ namespace Inventory
 
         private void button1_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
+            openFileDialog1.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
+                   openFileDialog1.ShowDialog();
             textBox1.Text = openFileDialog1.FileName;
-            imagePictureBox.Image = Image.FromFile(textBox1.Text);
+                try
+                {
+                    imagePictureBox.Image = Image.FromFile(textBox1.Text);
+
+                }
+                catch
+                {
+                    textBox1.Text = "";
+                }
         }
 
         private void imagePictureBox_Click(object sender, EventArgs e)
@@ -334,16 +358,18 @@ namespace Inventory
             Word.Bookmark bkm1 = oDoc.Bookmarks.get_Item(ref oBookMark1);
             bkm1.Range.Text = museum_codeTextBox.Text;
 
-            if (!(string.IsNullOrEmpty(imagePictureBox.ImageLocation)))
+            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "images/" + artifact_codeTextBox.Text + ".jpg"))
             {
                 object oBookMark2 = "image";
                 Word.Bookmark bkm2 = oDoc.Bookmarks.get_Item(ref oBookMark2);
                 object oRange = bkm2.Range;
                 object saveWithDocument = true;
-                string pictureName = imagePictureBox.ImageLocation;
+                string pictureName = AppDomain.CurrentDomain.BaseDirectory + "images/" + artifact_codeTextBox.Text + ".jpg";
+
                 var shape = oDoc.InlineShapes.AddPicture(pictureName, ref oMissing, ref saveWithDocument, ref oRange);
                 shape.Width = 200;
                 shape.Height = 150;
+
             }
 
             object oBookMark3 = "district";
@@ -433,13 +459,14 @@ namespace Inventory
             Word.Bookmark bkm1 = oDoc.Bookmarks.get_Item(ref oBookMark1);
             bkm1.Range.Text = museum_codeTextBox.Text;
 
-            if (!(string.IsNullOrEmpty(imagePictureBox.ImageLocation)))
+            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "images/" + artifact_codeTextBox.Text + ".jpg"))
             {
                 object oBookMark2 = "image";
                 Word.Bookmark bkm2 = oDoc.Bookmarks.get_Item(ref oBookMark2);
                 object oRange = bkm2.Range;
                 object saveWithDocument = true;
-                string pictureName = imagePictureBox.ImageLocation;
+                string pictureName = AppDomain.CurrentDomain.BaseDirectory + "images/" + artifact_codeTextBox.Text + ".jpg";
+
                 var shape = oDoc.InlineShapes.AddPicture(pictureName, ref oMissing, ref saveWithDocument, ref oRange);
                 shape.Width = 200;
                 shape.Height = 150;
@@ -513,11 +540,24 @@ namespace Inventory
         {
             try
             {
+
+                if (!String.IsNullOrEmpty(textBox1.Text))
+                {
+
+                    string path1 = textBox1.Text;
+                    string fileName = Path.GetFileName(path1);
+                    string path2 = AppDomain.CurrentDomain.BaseDirectory + "images/" + artifact_codeTextBox.Text + ".jpg";
+                    File.Copy(path1, path2);
+                    imagePictureBox.Image = Image.FromFile(path2);
+
+
+                }
+                textBox1.Clear();
+
                 this.Validate();
                 this.artifactsBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.database1DataSet1);
-                imagePictureBox.ImageLocation = textBox1.Text;
-                textBox1.Clear();
+
                 System.Windows.Forms.MessageBox.Show("Updated Record");
 
             }
@@ -526,6 +566,16 @@ namespace Inventory
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void descriptionTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

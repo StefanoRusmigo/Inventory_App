@@ -61,7 +61,9 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.artifactsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
@@ -116,6 +118,7 @@
             this.materialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chronologyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportInWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.locationsTableAdapter = new Inventory.Database1DataSet1TableAdapters.LocationsTableAdapter();
             this.materialsTableAdapter = new Inventory.Database1DataSet1TableAdapters.MaterialsTableAdapter();
@@ -137,9 +140,6 @@
             this.lengthTextBox = new System.Windows.Forms.TextBox();
             this.thicknessTextBox = new System.Windows.Forms.TextBox();
             this.widthTextBox = new System.Windows.Forms.TextBox();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             artifact_codeLabel = new System.Windows.Forms.Label();
             museum_codeLabel = new System.Windows.Forms.Label();
             location_district_Label = new System.Windows.Forms.Label();
@@ -226,7 +226,7 @@
             // type_of_the_artifactLabel
             // 
             type_of_the_artifactLabel.AutoSize = true;
-            type_of_the_artifactLabel.Location = new System.Drawing.Point(7, 63);
+            type_of_the_artifactLabel.Location = new System.Drawing.Point(7, 77);
             type_of_the_artifactLabel.Name = "type_of_the_artifactLabel";
             type_of_the_artifactLabel.Size = new System.Drawing.Size(99, 13);
             type_of_the_artifactLabel.TabIndex = 12;
@@ -262,7 +262,7 @@
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(8, 90);
+            descriptionLabel.Location = new System.Drawing.Point(10, 122);
             descriptionLabel.Name = "descriptionLabel";
             descriptionLabel.Size = new System.Drawing.Size(63, 13);
             descriptionLabel.TabIndex = 30;
@@ -272,7 +272,7 @@
             // usageLabel
             // 
             usageLabel.AutoSize = true;
-            usageLabel.Location = new System.Drawing.Point(8, 159);
+            usageLabel.Location = new System.Drawing.Point(10, 272);
             usageLabel.Name = "usageLabel";
             usageLabel.Size = new System.Drawing.Size(41, 13);
             usageLabel.TabIndex = 39;
@@ -482,6 +482,11 @@
             this.artifactsBindingNavigatorSaveItem.Text = "Save Data";
             this.artifactsBindingNavigatorSaveItem.Click += new System.EventHandler(this.artifactsBindingNavigatorSaveItem_Click_1);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // toolStripButton5
             // 
             this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -491,6 +496,17 @@
             this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton5.Text = "toolStripButton5";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton8.Text = "toolStripButton8";
+            this.toolStripButton8.ToolTipText = "Export to word";
+            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
             // toolStripSeparator1
             // 
@@ -507,8 +523,7 @@
             // 
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
-            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
-            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.artifactsBindingNavigatorSaveItem_Click_1);
+            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
             // toolStripLabel2
             // 
@@ -607,6 +622,9 @@
             // 
             // artifactsDataGridView
             // 
+            this.artifactsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.artifactsDataGridView.AutoGenerateColumns = false;
             this.artifactsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.artifactsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -737,7 +755,7 @@
             this.location_district_ComboBox.FormattingEnabled = true;
             this.location_district_ComboBox.Location = new System.Drawing.Point(128, 28);
             this.location_district_ComboBox.Name = "location_district_ComboBox";
-            this.location_district_ComboBox.Size = new System.Drawing.Size(121, 21);
+            this.location_district_ComboBox.Size = new System.Drawing.Size(172, 21);
             this.location_district_ComboBox.TabIndex = 7;
             // 
             // locationsBindingSource
@@ -755,7 +773,7 @@
             this.location_Place_Name_TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Location(Place Name)", true));
             this.location_Place_Name_TextBox.Location = new System.Drawing.Point(128, 55);
             this.location_Place_Name_TextBox.Name = "location_Place_Name_TextBox";
-            this.location_Place_Name_TextBox.Size = new System.Drawing.Size(121, 20);
+            this.location_Place_Name_TextBox.Size = new System.Drawing.Size(172, 20);
             this.location_Place_Name_TextBox.TabIndex = 9;
             // 
             // gPS_coordinatesTextBox
@@ -763,7 +781,7 @@
             this.gPS_coordinatesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "GPS_coordinates", true));
             this.gPS_coordinatesTextBox.Location = new System.Drawing.Point(128, 81);
             this.gPS_coordinatesTextBox.Name = "gPS_coordinatesTextBox";
-            this.gPS_coordinatesTextBox.Size = new System.Drawing.Size(121, 20);
+            this.gPS_coordinatesTextBox.Size = new System.Drawing.Size(172, 20);
             this.gPS_coordinatesTextBox.TabIndex = 11;
             // 
             // type_of_the_artifactComboBox
@@ -773,9 +791,9 @@
             this.type_of_the_artifactComboBox.DisplayMember = "type";
             this.type_of_the_artifactComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.type_of_the_artifactComboBox.FormattingEnabled = true;
-            this.type_of_the_artifactComboBox.Location = new System.Drawing.Point(128, 60);
+            this.type_of_the_artifactComboBox.Location = new System.Drawing.Point(129, 74);
             this.type_of_the_artifactComboBox.Name = "type_of_the_artifactComboBox";
-            this.type_of_the_artifactComboBox.Size = new System.Drawing.Size(183, 21);
+            this.type_of_the_artifactComboBox.Size = new System.Drawing.Size(181, 21);
             this.type_of_the_artifactComboBox.TabIndex = 13;
             // 
             // artifactTypesBindingSource
@@ -830,12 +848,13 @@
             // descriptionTextBox
             // 
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(127, 90);
+            this.descriptionTextBox.Location = new System.Drawing.Point(13, 145);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descriptionTextBox.Size = new System.Drawing.Size(184, 62);
+            this.descriptionTextBox.Size = new System.Drawing.Size(297, 117);
             this.descriptionTextBox.TabIndex = 31;
+            this.descriptionTextBox.TextChanged += new System.EventHandler(this.descriptionTextBox_TextChanged);
             // 
             // imagePictureBox
             // 
@@ -911,6 +930,13 @@
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
             // exportInWordToolStripMenuItem
             // 
             this.exportInWordToolStripMenuItem.Name = "exportInWordToolStripMenuItem";
@@ -936,6 +962,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox1.Controls.Add(this.gPS_coordinatesTextBox);
             this.groupBox1.Controls.Add(gPS_coordinatesLabel);
             this.groupBox1.Controls.Add(this.location_Place_Name_TextBox);
@@ -961,7 +988,7 @@
             this.groupBox2.Controls.Add(this.descriptionTextBox);
             this.groupBox2.Location = new System.Drawing.Point(531, 146);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(317, 241);
+            this.groupBox2.Size = new System.Drawing.Size(317, 367);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
@@ -969,11 +996,11 @@
             // usageTextBox
             // 
             this.usageTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Usage", true));
-            this.usageTextBox.Location = new System.Drawing.Point(127, 159);
+            this.usageTextBox.Location = new System.Drawing.Point(13, 291);
             this.usageTextBox.Multiline = true;
             this.usageTextBox.Name = "usageTextBox";
             this.usageTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.usageTextBox.Size = new System.Drawing.Size(183, 65);
+            this.usageTextBox.Size = new System.Drawing.Size(297, 67);
             this.usageTextBox.TabIndex = 40;
             // 
             // groupBox4
@@ -994,7 +1021,7 @@
             this.groupBox5.Controls.Add(this.textBox1);
             this.groupBox5.Controls.Add(this.button1);
             this.groupBox5.Controls.Add(this.imagePictureBox);
-            this.groupBox5.Location = new System.Drawing.Point(948, 206);
+            this.groupBox5.Location = new System.Drawing.Point(951, 146);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(329, 244);
             this.groupBox5.TabIndex = 39;
@@ -1021,23 +1048,24 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // bibliographyTextBox
             // 
             this.bibliographyTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Bibliography", true));
-            this.bibliographyTextBox.Location = new System.Drawing.Point(129, 22);
+            this.bibliographyTextBox.Location = new System.Drawing.Point(20, 19);
             this.bibliographyTextBox.Multiline = true;
             this.bibliographyTextBox.Name = "bibliographyTextBox";
             this.bibliographyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.bibliographyTextBox.Size = new System.Drawing.Size(188, 72);
+            this.bibliographyTextBox.Size = new System.Drawing.Size(297, 67);
             this.bibliographyTextBox.TabIndex = 41;
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.bibliographyTextBox);
-            this.groupBox6.Location = new System.Drawing.Point(531, 401);
+            this.groupBox6.Location = new System.Drawing.Point(951, 418);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(326, 112);
+            this.groupBox6.Size = new System.Drawing.Size(329, 95);
             this.groupBox6.TabIndex = 42;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Bibliography";
@@ -1102,29 +1130,6 @@
             this.widthTextBox.Name = "widthTextBox";
             this.widthTextBox.Size = new System.Drawing.Size(44, 20);
             this.widthTextBox.TabIndex = 18;
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton8.Text = "toolStripButton8";
-            this.toolStripButton8.ToolTipText = "Export to word";
-            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // Form1
             // 
