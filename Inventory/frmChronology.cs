@@ -22,6 +22,8 @@ namespace Inventory
             this.Validate();
             this.chronologiesBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.database1DataSet1);
+     
+
 
         }
 

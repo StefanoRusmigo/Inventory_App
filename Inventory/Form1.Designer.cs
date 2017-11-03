@@ -140,6 +140,7 @@
             this.lengthTextBox = new System.Windows.Forms.TextBox();
             this.thicknessTextBox = new System.Windows.Forms.TextBox();
             this.widthTextBox = new System.Windows.Forms.TextBox();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             artifact_codeLabel = new System.Windows.Forms.Label();
             museum_codeLabel = new System.Windows.Forms.Label();
             location_district_Label = new System.Windows.Forms.Label();
@@ -201,9 +202,9 @@
             location_district_Label.AutoSize = true;
             location_district_Label.Location = new System.Drawing.Point(7, 31);
             location_district_Label.Name = "location_district_Label";
-            location_district_Label.Size = new System.Drawing.Size(87, 13);
+            location_district_Label.Size = new System.Drawing.Size(89, 13);
             location_district_Label.TabIndex = 6;
-            location_district_Label.Text = "Location(district):";
+            location_district_Label.Text = "Location(District):";
             // 
             // location_Place_Name_Label
             // 
@@ -887,9 +888,10 @@
             this.newToolStripMenuItem,
             this.refreshToolStripMenuItem,
             this.saveToolStripMenuItem,
+            this.deleteToolStripMenuItem,
             this.exportInWordToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 136);
             // 
             // newToolStripMenuItem
             // 
@@ -1131,6 +1133,13 @@
             this.widthTextBox.Size = new System.Drawing.Size(44, 20);
             this.widthTextBox.TabIndex = 18;
             // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1285,6 +1294,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
 

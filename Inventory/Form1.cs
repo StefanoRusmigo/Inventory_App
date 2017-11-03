@@ -300,21 +300,29 @@ namespace Inventory
 
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
-            this.artifactsBindingSource.AddNew();
+            try
+            {
+                this.artifactsBindingSource.AddNew();
 
+                location_district_ComboBox.SelectedIndex = -1;
+                chronologyComboBox.SelectedIndex = -1;
+                materialComboBox.SelectedIndex = -1;
+                type_of_the_artifactComboBox.SelectedIndex = -1;
 
-            location_district_ComboBox.SelectedIndex = -1;
-            chronologyComboBox.SelectedIndex = -1;
-            materialComboBox.SelectedIndex = -1;
-            type_of_the_artifactComboBox.SelectedIndex = -1;
+            }
+            
+             catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
 
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
-
+            string mes = artifact_codeTextBox.Text;
             DialogResult myResult;
-            myResult = MessageBox.Show("Are you really delete the item?", "Delete Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            myResult = MessageBox.Show($"Are you really delete item code {mes}?", "Delete Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (myResult == DialogResult.OK)
             {
                 this.artifactsBindingSource.RemoveCurrent();
@@ -576,6 +584,25 @@ namespace Inventory
         private void descriptionTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string mes = artifact_codeTextBox.Text;
+            DialogResult myResult;
+            myResult = MessageBox.Show($"Are you really delete item code {mes}?", "Delete Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (myResult == DialogResult.OK)
+            {
+                this.artifactsBindingSource.RemoveCurrent();
+                this.Validate();
+                this.artifactsBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.database1DataSet1);
+
+            }
+            else
+            {
+                //No delete
+            }
         }
     }
 
