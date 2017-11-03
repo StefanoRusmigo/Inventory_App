@@ -41,10 +41,10 @@ namespace Inventory
                 imagePictureBox.ImageLocation = textBox1.Text;
                 textBox1.Clear();
                 System.Windows.Forms.MessageBox.Show("Updated Record");
-           
+
             }
-    
-             catch (System.Exception ex)
+
+            catch (System.Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
@@ -63,9 +63,6 @@ namespace Inventory
             this.locationsTableAdapter.Fill(this.database1DataSet11.Locations);
             // TODO: This line of code loads data into the 'database1DataSet1.Artifacts' table. You can move, or remove it, as needed.
             this.artifactsTableAdapter.Fill(this.database1DataSet1.Artifacts);
-
-            //focus
-            artifact_codeTextBox.Focus();
 
             textBox1.Clear();
 
@@ -118,6 +115,8 @@ namespace Inventory
             }
 
             con.Close();
+            //focus
+            artifact_codeTextBox.Focus();
 
         }
 
@@ -162,7 +161,7 @@ namespace Inventory
             }
             else if (toolStripButton4.Text == "Clear")
             {
-                 Form1_Load(e, e);
+                Form1_Load(e, e);
 
                 toolStripButton4.Text = "Submit";
             }
@@ -217,7 +216,7 @@ namespace Inventory
         {
             openFileDialog1.ShowDialog();
             textBox1.Text = openFileDialog1.FileName;
-             imagePictureBox.Image = Image.FromFile(textBox1.Text);
+            imagePictureBox.Image = Image.FromFile(textBox1.Text);
         }
 
         private void imagePictureBox_Click(object sender, EventArgs e)
@@ -245,7 +244,7 @@ namespace Inventory
 
         }
 
-       
+
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
 
@@ -255,7 +254,7 @@ namespace Inventory
 
         private void artifact_codeTextBox_TextChanged(object sender, EventArgs e)
         {
-        
+
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
@@ -265,7 +264,7 @@ namespace Inventory
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -273,16 +272,17 @@ namespace Inventory
 
         }
 
-    
+
 
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
+            this.artifactsBindingSource.AddNew();
+
 
             location_district_ComboBox.SelectedIndex = -1;
             chronologyComboBox.SelectedIndex = -1;
             materialComboBox.SelectedIndex = -1;
             type_of_the_artifactComboBox.SelectedIndex = -1;
-            this.artifactsBindingSource.AddNew();
 
         }
 
@@ -294,21 +294,20 @@ namespace Inventory
             if (myResult == DialogResult.OK)
             {
                 this.artifactsBindingSource.RemoveCurrent();
+                this.Validate();
+                this.artifactsBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.database1DataSet1);
+
             }
             else
             {
                 //No delete
             }
-          
+
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string a = Application.StartupPath;
-            MessageBox.Show(a);
 
-        }
 
         private void exportInWordToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -323,7 +322,7 @@ namespace Inventory
             oWord.Visible = true;
 
 
-            object oTemplate = "C:/Users/Stefa/Documents/Visual Studio 2017/Projects/Inventory/Inventory/template.docx";
+            object oTemplate = AppDomain.CurrentDomain.BaseDirectory + "template.docx";
             oDoc = oWord.Documents.Add(ref oTemplate, ref oMissing,
             ref oMissing, ref oMissing);
 
@@ -335,13 +334,17 @@ namespace Inventory
             Word.Bookmark bkm1 = oDoc.Bookmarks.get_Item(ref oBookMark1);
             bkm1.Range.Text = museum_codeTextBox.Text;
 
-
-            object oBookMark2 = "image";
-            Word.Bookmark bkm2 = oDoc.Bookmarks.get_Item(ref oBookMark2);
-            object oRange = bkm2.Range;
-            object saveWithDocument = true;
-            string pictureName = imagePictureBox.ImageLocation;
-            oDoc.InlineShapes.AddPicture(pictureName, ref oMissing, ref saveWithDocument, ref oRange);
+            if (!(string.IsNullOrEmpty(imagePictureBox.ImageLocation)))
+            {
+                object oBookMark2 = "image";
+                Word.Bookmark bkm2 = oDoc.Bookmarks.get_Item(ref oBookMark2);
+                object oRange = bkm2.Range;
+                object saveWithDocument = true;
+                string pictureName = imagePictureBox.ImageLocation;
+                var shape = oDoc.InlineShapes.AddPicture(pictureName, ref oMissing, ref saveWithDocument, ref oRange);
+                shape.Width = 200;
+                shape.Height = 150;
+            }
 
             object oBookMark3 = "district";
             Word.Bookmark bkm3 = oDoc.Bookmarks.get_Item(ref oBookMark3);
@@ -404,5 +407,126 @@ namespace Inventory
             Word.Bookmark bkm17 = oDoc.Bookmarks.get_Item(ref oBookMark17);
             bkm17.Range.Text = bibliographyTextBox.Text;
         }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            object oMissing = System.Reflection.Missing.Value;
+            object oEndOfDoc = "\\endofdoc"; /* \endofdoc is a predefined bookmark */
+
+
+            //Start Word and create a new document.
+            Word._Application oWord;
+            Word._Document oDoc;
+            oWord = new Word.Application();
+            oWord.Visible = true;
+
+
+            object oTemplate = AppDomain.CurrentDomain.BaseDirectory + "template.docx";
+            oDoc = oWord.Documents.Add(ref oTemplate, ref oMissing,
+            ref oMissing, ref oMissing);
+
+            object oBookMark = "artifact_code";
+            Word.Bookmark bkm = oDoc.Bookmarks.get_Item(ref oBookMark);
+            bkm.Range.Text = artifact_codeTextBox.Text;
+
+            object oBookMark1 = "museum_code";
+            Word.Bookmark bkm1 = oDoc.Bookmarks.get_Item(ref oBookMark1);
+            bkm1.Range.Text = museum_codeTextBox.Text;
+
+            if (!(string.IsNullOrEmpty(imagePictureBox.ImageLocation)))
+            {
+                object oBookMark2 = "image";
+                Word.Bookmark bkm2 = oDoc.Bookmarks.get_Item(ref oBookMark2);
+                object oRange = bkm2.Range;
+                object saveWithDocument = true;
+                string pictureName = imagePictureBox.ImageLocation;
+                var shape = oDoc.InlineShapes.AddPicture(pictureName, ref oMissing, ref saveWithDocument, ref oRange);
+                shape.Width = 200;
+                shape.Height = 150;
+
+            }
+
+            object oBookMark3 = "district";
+            Word.Bookmark bkm3 = oDoc.Bookmarks.get_Item(ref oBookMark3);
+            bkm3.Range.Text = location_district_ComboBox.Text;
+
+            object oBookMark4 = "place_name";
+            Word.Bookmark bkm4 = oDoc.Bookmarks.get_Item(ref oBookMark4);
+            bkm4.Range.Text = location_Place_Name_TextBox.Text;
+
+            object oBookMark5 = "coordinates";
+            Word.Bookmark bkm5 = oDoc.Bookmarks.get_Item(ref oBookMark5);
+            bkm5.Range.Text = gPS_coordinatesTextBox.Text;
+
+            object oBookMark6 = "material";
+            Word.Bookmark bkm6 = oDoc.Bookmarks.get_Item(ref oBookMark6);
+            bkm6.Range.Text = materialComboBox.Text;
+
+            object oBookMark7 = "type";
+            Word.Bookmark bkm7 = oDoc.Bookmarks.get_Item(ref oBookMark7);
+            bkm7.Range.Text = type_of_the_artifactComboBox.Text;
+
+            object oBookMark8 = "chrono";
+            Word.Bookmark bkm8 = oDoc.Bookmarks.get_Item(ref oBookMark8);
+            bkm8.Range.Text = chronologyComboBox.Text;
+
+
+            object oBookMark9 = "based_on";
+            Word.Bookmark bkm9 = oDoc.Bookmarks.get_Item(ref oBookMark9);
+            bkm9.Range.Text = based_onTextBox.Text;
+
+            object oBookMark10 = "height";
+            Word.Bookmark bkm10 = oDoc.Bookmarks.get_Item(ref oBookMark10);
+            bkm10.Range.Text = heightTextBox.Text;
+
+            object oBookMark11 = "width";
+            Word.Bookmark bkm11 = oDoc.Bookmarks.get_Item(ref oBookMark11);
+            bkm11.Range.Text = widthTextBox.Text;
+
+            object oBookMark12 = "length";
+            Word.Bookmark bkm12 = oDoc.Bookmarks.get_Item(ref oBookMark12);
+            bkm12.Range.Text = lengthTextBox.Text;
+
+            object oBookMark13 = "thick";
+            Word.Bookmark bkm13 = oDoc.Bookmarks.get_Item(ref oBookMark13);
+            bkm13.Range.Text = thicknessTextBox.Text;
+
+            object oBookMark14 = "weight";
+            Word.Bookmark bkm14 = oDoc.Bookmarks.get_Item(ref oBookMark14);
+            bkm14.Range.Text = weightTextBox.Text;
+
+            object oBookMark15 = "description";
+            Word.Bookmark bkm15 = oDoc.Bookmarks.get_Item(ref oBookMark15);
+            bkm15.Range.Text = descriptionTextBox.Text;
+
+            object oBookMark16 = "usage";
+            Word.Bookmark bkm16 = oDoc.Bookmarks.get_Item(ref oBookMark16);
+            bkm16.Range.Text = usageTextBox.Text;
+
+            object oBookMark17 = "bibliography";
+            Word.Bookmark bkm17 = oDoc.Bookmarks.get_Item(ref oBookMark17);
+            bkm17.Range.Text = bibliographyTextBox.Text;
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Validate();
+                this.artifactsBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.database1DataSet1);
+                imagePictureBox.ImageLocation = textBox1.Text;
+                textBox1.Clear();
+                System.Windows.Forms.MessageBox.Show("Updated Record");
+
+            }
+
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
     }
+
 }

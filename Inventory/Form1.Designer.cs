@@ -116,6 +116,7 @@
             this.materialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chronologyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportInWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.locationsTableAdapter = new Inventory.Database1DataSet1TableAdapters.LocationsTableAdapter();
             this.materialsTableAdapter = new Inventory.Database1DataSet1TableAdapters.MaterialsTableAdapter();
             this.artifactTypesTableAdapter = new Inventory.Database1DataSet1TableAdapters.ArtifactTypesTableAdapter();
@@ -136,8 +137,9 @@
             this.lengthTextBox = new System.Windows.Forms.TextBox();
             this.thicknessTextBox = new System.Windows.Forms.TextBox();
             this.widthTextBox = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.exportInWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             artifact_codeLabel = new System.Windows.Forms.Label();
             museum_codeLabel = new System.Windows.Forms.Label();
             location_district_Label = new System.Windows.Forms.Label();
@@ -342,7 +344,9 @@
             this.toolStripButton6,
             this.toolStripButton7,
             this.artifactsBindingNavigatorSaveItem,
+            this.toolStripSeparator2,
             this.toolStripButton5,
+            this.toolStripButton8,
             this.toolStripSeparator1,
             this.toolStripLabel1,
             this.toolStripTextBox1,
@@ -462,6 +466,7 @@
             // toolStripButton7
             // 
             this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.RightToLeftAutoMirrorImage = true;
             this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
@@ -591,6 +596,7 @@
             // 
             // toolStripButton4
             // 
+            this.toolStripButton4.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -861,9 +867,10 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.refreshToolStripMenuItem,
+            this.saveToolStripMenuItem,
             this.exportInWordToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(150, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
             // 
             // newToolStripMenuItem
             // 
@@ -903,6 +910,13 @@
             this.refreshToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
+            // exportInWordToolStripMenuItem
+            // 
+            this.exportInWordToolStripMenuItem.Name = "exportInWordToolStripMenuItem";
+            this.exportInWordToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportInWordToolStripMenuItem.Text = "Export in Word";
+            this.exportInWordToolStripMenuItem.Click += new System.EventHandler(this.exportInWordToolStripMenuItem_Click);
             // 
             // locationsTableAdapter
             // 
@@ -1089,31 +1103,37 @@
             this.widthTextBox.Size = new System.Drawing.Size(44, 20);
             this.widthTextBox.TabIndex = 18;
             // 
-            // button2
+            // toolStripButton8
             // 
-            this.button2.Location = new System.Drawing.Point(75, 52);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 45;
-            this.button2.Text = "Path";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton8.Text = "toolStripButton8";
+            this.toolStripButton8.ToolTipText = "Export to word";
+            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
-            // exportInWordToolStripMenuItem
+            // toolStripSeparator2
             // 
-            this.exportInWordToolStripMenuItem.Name = "exportInWordToolStripMenuItem";
-            this.exportInWordToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exportInWordToolStripMenuItem.Text = "Export inWord";
-            this.exportInWordToolStripMenuItem.Click += new System.EventHandler(this.exportInWordToolStripMenuItem_Click);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1375, 698);
             this.ContextMenuStrip = this.contextMenuStrip1;
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -1127,7 +1147,7 @@
             this.Controls.Add(this.artifactsDataGridView);
             this.Controls.Add(this.artifactsBindingNavigator);
             this.Name = "Form1";
-            this.Text = "\\";
+            this.Text = "Inventory";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.artifactsBindingNavigator)).EndInit();
@@ -1256,8 +1276,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem exportInWordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
     }
 }
 
