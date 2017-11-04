@@ -119,6 +119,7 @@
             this.chronologyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportInWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.locationsTableAdapter = new Inventory.Database1DataSet1TableAdapters.LocationsTableAdapter();
             this.materialsTableAdapter = new Inventory.Database1DataSet1TableAdapters.MaterialsTableAdapter();
@@ -140,7 +141,6 @@
             this.lengthTextBox = new System.Windows.Forms.TextBox();
             this.thicknessTextBox = new System.Windows.Forms.TextBox();
             this.widthTextBox = new System.Windows.Forms.TextBox();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             artifact_codeLabel = new System.Windows.Forms.Label();
             museum_codeLabel = new System.Windows.Forms.Label();
             location_district_Label = new System.Windows.Forms.Label();
@@ -283,25 +283,27 @@
             // heightLabel
             // 
             heightLabel.AutoSize = true;
-            heightLabel.Location = new System.Drawing.Point(10, 32);
+            heightLabel.Location = new System.Drawing.Point(10, 36);
             heightLabel.Name = "heightLabel";
             heightLabel.Size = new System.Drawing.Size(41, 13);
             heightLabel.TabIndex = 16;
             heightLabel.Text = "Height:";
+            heightLabel.Click += new System.EventHandler(this.heightLabel_Click);
             // 
             // widthLabel
             // 
             widthLabel.AutoSize = true;
-            widthLabel.Location = new System.Drawing.Point(166, 41);
+            widthLabel.Location = new System.Drawing.Point(174, 36);
             widthLabel.Name = "widthLabel";
             widthLabel.Size = new System.Drawing.Size(38, 13);
             widthLabel.TabIndex = 17;
             widthLabel.Text = "Width:";
+            widthLabel.Click += new System.EventHandler(this.widthLabel_Click);
             // 
             // thicknessLabel
             // 
             thicknessLabel.AutoSize = true;
-            thicknessLabel.Location = new System.Drawing.Point(10, 91);
+            thicknessLabel.Location = new System.Drawing.Point(10, 86);
             thicknessLabel.Name = "thicknessLabel";
             thicknessLabel.Size = new System.Drawing.Size(59, 13);
             thicknessLabel.TabIndex = 18;
@@ -310,7 +312,7 @@
             // lengthLabel
             // 
             lengthLabel.AutoSize = true;
-            lengthLabel.Location = new System.Drawing.Point(10, 62);
+            lengthLabel.Location = new System.Drawing.Point(10, 60);
             lengthLabel.Name = "lengthLabel";
             lengthLabel.Size = new System.Drawing.Size(43, 13);
             lengthLabel.TabIndex = 19;
@@ -319,11 +321,12 @@
             // weightLabel
             // 
             weightLabel.AutoSize = true;
-            weightLabel.Location = new System.Drawing.Point(166, 65);
+            weightLabel.Location = new System.Drawing.Point(174, 60);
             weightLabel.Name = "weightLabel";
             weightLabel.Size = new System.Drawing.Size(44, 13);
             weightLabel.TabIndex = 20;
             weightLabel.Text = "Weight:";
+            weightLabel.Click += new System.EventHandler(this.weightLabel_Click);
             // 
             // artifactsBindingNavigator
             // 
@@ -826,9 +829,9 @@
             this.chronologyComboBox.DisplayMember = "Chronology";
             this.chronologyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.chronologyComboBox.FormattingEnabled = true;
-            this.chronologyComboBox.Location = new System.Drawing.Point(127, 32);
+            this.chronologyComboBox.Location = new System.Drawing.Point(93, 32);
             this.chronologyComboBox.Name = "chronologyComboBox";
-            this.chronologyComboBox.Size = new System.Drawing.Size(173, 21);
+            this.chronologyComboBox.Size = new System.Drawing.Size(207, 21);
             this.chronologyComboBox.TabIndex = 27;
             // 
             // chronologiesBindingSource
@@ -839,11 +842,11 @@
             // based_onTextBox
             // 
             this.based_onTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Based_on", true));
-            this.based_onTextBox.Location = new System.Drawing.Point(127, 59);
+            this.based_onTextBox.Location = new System.Drawing.Point(93, 59);
             this.based_onTextBox.Multiline = true;
             this.based_onTextBox.Name = "based_onTextBox";
             this.based_onTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.based_onTextBox.Size = new System.Drawing.Size(173, 41);
+            this.based_onTextBox.Size = new System.Drawing.Size(207, 41);
             this.based_onTextBox.TabIndex = 29;
             // 
             // descriptionTextBox
@@ -891,7 +894,7 @@
             this.deleteToolStripMenuItem,
             this.exportInWordToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 114);
             // 
             // newToolStripMenuItem
             // 
@@ -938,6 +941,13 @@
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // exportInWordToolStripMenuItem
             // 
@@ -1076,9 +1086,9 @@
             // heightTextBox
             // 
             this.heightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Height", true));
-            this.heightTextBox.Location = new System.Drawing.Point(93, 32);
+            this.heightTextBox.Location = new System.Drawing.Point(83, 32);
             this.heightTextBox.Name = "heightTextBox";
-            this.heightTextBox.Size = new System.Drawing.Size(44, 20);
+            this.heightTextBox.Size = new System.Drawing.Size(64, 20);
             this.heightTextBox.TabIndex = 17;
             // 
             // groupBox3
@@ -1104,41 +1114,35 @@
             // weightTextBox
             // 
             this.weightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Weight", true));
-            this.weightTextBox.Location = new System.Drawing.Point(224, 62);
+            this.weightTextBox.Location = new System.Drawing.Point(243, 60);
             this.weightTextBox.Name = "weightTextBox";
-            this.weightTextBox.Size = new System.Drawing.Size(44, 20);
+            this.weightTextBox.Size = new System.Drawing.Size(64, 20);
             this.weightTextBox.TabIndex = 21;
+            this.weightTextBox.TextChanged += new System.EventHandler(this.weightTextBox_TextChanged);
             // 
             // lengthTextBox
             // 
             this.lengthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Length", true));
-            this.lengthTextBox.Location = new System.Drawing.Point(93, 58);
+            this.lengthTextBox.Location = new System.Drawing.Point(83, 57);
             this.lengthTextBox.Name = "lengthTextBox";
-            this.lengthTextBox.Size = new System.Drawing.Size(44, 20);
+            this.lengthTextBox.Size = new System.Drawing.Size(64, 20);
             this.lengthTextBox.TabIndex = 20;
             // 
             // thicknessTextBox
             // 
             this.thicknessTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Thickness", true));
-            this.thicknessTextBox.Location = new System.Drawing.Point(93, 84);
+            this.thicknessTextBox.Location = new System.Drawing.Point(83, 83);
             this.thicknessTextBox.Name = "thicknessTextBox";
-            this.thicknessTextBox.Size = new System.Drawing.Size(44, 20);
+            this.thicknessTextBox.Size = new System.Drawing.Size(64, 20);
             this.thicknessTextBox.TabIndex = 19;
             // 
             // widthTextBox
             // 
             this.widthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Width", true));
-            this.widthTextBox.Location = new System.Drawing.Point(224, 34);
+            this.widthTextBox.Location = new System.Drawing.Point(243, 32);
             this.widthTextBox.Name = "widthTextBox";
-            this.widthTextBox.Size = new System.Drawing.Size(44, 20);
+            this.widthTextBox.Size = new System.Drawing.Size(64, 20);
             this.widthTextBox.TabIndex = 18;
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // Form1
             // 
