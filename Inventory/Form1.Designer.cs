@@ -141,6 +141,7 @@
             this.lengthTextBox = new System.Windows.Forms.TextBox();
             this.thicknessTextBox = new System.Windows.Forms.TextBox();
             this.widthTextBox = new System.Windows.Forms.TextBox();
+            this.artifactsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             artifact_codeLabel = new System.Windows.Forms.Label();
             museum_codeLabel = new System.Windows.Forms.Label();
             location_district_Label = new System.Windows.Forms.Label();
@@ -175,6 +176,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.artifactsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // artifact_codeLabel
@@ -648,7 +650,7 @@
             this.artifactsDataGridView.DataSource = this.artifactsBindingSource;
             this.artifactsDataGridView.Location = new System.Drawing.Point(7, 523);
             this.artifactsDataGridView.Name = "artifactsDataGridView";
-            this.artifactsDataGridView.Size = new System.Drawing.Size(1348, 175);
+            this.artifactsDataGridView.Size = new System.Drawing.Size(1348, 275);
             this.artifactsDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -816,6 +818,7 @@
             this.materialComboBox.Name = "materialComboBox";
             this.materialComboBox.Size = new System.Drawing.Size(182, 21);
             this.materialComboBox.TabIndex = 15;
+            this.materialComboBox.SelectedIndexChanged += new System.EventHandler(this.materialComboBox_SelectedIndexChanged);
             // 
             // materialsBindingSource
             // 
@@ -1144,13 +1147,18 @@
             this.widthTextBox.Size = new System.Drawing.Size(64, 20);
             this.widthTextBox.TabIndex = 18;
             // 
+            // artifactsBindingSource1
+            // 
+            this.artifactsBindingSource1.DataMember = "Artifacts";
+            this.artifactsBindingSource1.DataSource = this.database1DataSet11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1375, 698);
+            this.ClientSize = new System.Drawing.Size(1375, 798);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -1193,6 +1201,7 @@
             this.groupBox6.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.artifactsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1299,6 +1308,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.BindingSource artifactsBindingSource1;
     }
 }
 

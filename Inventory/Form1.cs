@@ -535,6 +535,11 @@ namespace Inventory
         {
 
         }
+
+        private void materialComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
