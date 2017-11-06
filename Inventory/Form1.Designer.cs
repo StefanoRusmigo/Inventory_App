@@ -46,6 +46,7 @@
             System.Windows.Forms.Label lengthLabel;
             System.Windows.Forms.Label weightLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.Label diameterLabel;
             this.artifactsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.artifactsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet1 = new Inventory.Database1DataSet1();
@@ -142,6 +143,7 @@
             this.thicknessTextBox = new System.Windows.Forms.TextBox();
             this.widthTextBox = new System.Windows.Forms.TextBox();
             this.artifactsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.diameterTextBox = new System.Windows.Forms.TextBox();
             artifact_codeLabel = new System.Windows.Forms.Label();
             museum_codeLabel = new System.Windows.Forms.Label();
             location_district_Label = new System.Windows.Forms.Label();
@@ -158,6 +160,7 @@
             thicknessLabel = new System.Windows.Forms.Label();
             lengthLabel = new System.Windows.Forms.Label();
             weightLabel = new System.Windows.Forms.Label();
+            diameterLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.artifactsBindingNavigator)).BeginInit();
             this.artifactsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.artifactsBindingSource)).BeginInit();
@@ -295,7 +298,7 @@
             // widthLabel
             // 
             widthLabel.AutoSize = true;
-            widthLabel.Location = new System.Drawing.Point(174, 36);
+            widthLabel.Location = new System.Drawing.Point(174, 87);
             widthLabel.Name = "widthLabel";
             widthLabel.Size = new System.Drawing.Size(38, 13);
             widthLabel.TabIndex = 17;
@@ -1096,6 +1099,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(diameterLabel);
+            this.groupBox3.Controls.Add(this.diameterTextBox);
             this.groupBox3.Controls.Add(weightLabel);
             this.groupBox3.Controls.Add(this.weightTextBox);
             this.groupBox3.Controls.Add(lengthLabel);
@@ -1103,9 +1108,9 @@
             this.groupBox3.Controls.Add(thicknessLabel);
             this.groupBox3.Controls.Add(this.thicknessTextBox);
             this.groupBox3.Controls.Add(widthLabel);
-            this.groupBox3.Controls.Add(this.widthTextBox);
             this.groupBox3.Controls.Add(this.heightTextBox);
             this.groupBox3.Controls.Add(heightLabel);
+            this.groupBox3.Controls.Add(this.widthTextBox);
             this.groupBox3.Location = new System.Drawing.Point(99, 401);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(317, 112);
@@ -1117,7 +1122,7 @@
             // weightTextBox
             // 
             this.weightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Weight", true));
-            this.weightTextBox.Location = new System.Drawing.Point(243, 60);
+            this.weightTextBox.Location = new System.Drawing.Point(243, 56);
             this.weightTextBox.Name = "weightTextBox";
             this.weightTextBox.Size = new System.Drawing.Size(64, 20);
             this.weightTextBox.TabIndex = 21;
@@ -1142,7 +1147,7 @@
             // widthTextBox
             // 
             this.widthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Width", true));
-            this.widthTextBox.Location = new System.Drawing.Point(243, 32);
+            this.widthTextBox.Location = new System.Drawing.Point(243, 83);
             this.widthTextBox.Name = "widthTextBox";
             this.widthTextBox.Size = new System.Drawing.Size(64, 20);
             this.widthTextBox.TabIndex = 18;
@@ -1151,6 +1156,24 @@
             // 
             this.artifactsBindingSource1.DataMember = "Artifacts";
             this.artifactsBindingSource1.DataSource = this.database1DataSet11;
+            // 
+            // diameterLabel
+            // 
+            diameterLabel.AutoSize = true;
+            diameterLabel.Location = new System.Drawing.Point(174, 33);
+            diameterLabel.Name = "diameterLabel";
+            diameterLabel.Size = new System.Drawing.Size(52, 13);
+            diameterLabel.TabIndex = 21;
+            diameterLabel.Text = "Diameter:";
+            // 
+            // diameterTextBox
+            // 
+            this.diameterTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artifactsBindingSource, "Diameter", true));
+            this.diameterTextBox.Location = new System.Drawing.Point(243, 29);
+            this.diameterTextBox.Name = "diameterTextBox";
+            this.diameterTextBox.Size = new System.Drawing.Size(64, 20);
+            this.diameterTextBox.TabIndex = 22;
+            this.diameterTextBox.TextChanged += new System.EventHandler(this.diameterTextBox_TextChanged);
             // 
             // Form1
             // 
@@ -1309,6 +1332,7 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.BindingSource artifactsBindingSource1;
+        private System.Windows.Forms.TextBox diameterTextBox;
     }
 }
 

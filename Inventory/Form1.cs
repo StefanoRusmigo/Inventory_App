@@ -437,6 +437,10 @@ namespace Inventory
             Word.Bookmark bkm14 = oDoc.Bookmarks.get_Item(ref oBookMark14);
             bkm14.Range.Text = weightTextBox.Text;
 
+            object oBookMark24 = "diameter";
+            Word.Bookmark bkm24 = oDoc.Bookmarks.get_Item(ref oBookMark24);
+            bkm24.Range.Text = diameterTextBox.Text;
+
             object oBookMark15 = "description";
             Word.Bookmark bkm15 = oDoc.Bookmarks.get_Item(ref oBookMark15);
             bkm15.Range.Text = descriptionTextBox.Text;
@@ -537,6 +541,11 @@ namespace Inventory
         }
 
         private void materialComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void diameterTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -455,6 +455,8 @@ namespace Inventory {
             
             private global::System.Data.DataColumn columnWeight;
             
+            private global::System.Data.DataColumn columnDiameter;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ArtifactsDataTable() {
@@ -634,6 +636,14 @@ namespace Inventory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DiameterColumn {
+                get {
+                    return this.columnDiameter;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -687,7 +697,8 @@ namespace Inventory {
                         string Width, 
                         string Thickness, 
                         string Length, 
-                        string Weight) {
+                        string Weight, 
+                        string Diameter) {
                 ArtifactsRow rowArtifactsRow = ((ArtifactsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Artifact_code,
@@ -707,7 +718,8 @@ namespace Inventory {
                         Width,
                         Thickness,
                         Length,
-                        Weight};
+                        Weight,
+                        Diameter};
                 rowArtifactsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowArtifactsRow);
                 return rowArtifactsRow;
@@ -755,6 +767,7 @@ namespace Inventory {
                 this.columnThickness = base.Columns["Thickness"];
                 this.columnLength = base.Columns["Length"];
                 this.columnWeight = base.Columns["Weight"];
+                this.columnDiameter = base.Columns["Diameter"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -800,6 +813,8 @@ namespace Inventory {
                 base.Columns.Add(this.columnLength);
                 this.columnWeight = new global::System.Data.DataColumn("Weight", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnWeight);
+                this.columnDiameter = new global::System.Data.DataColumn("Diameter", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDiameter);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnArtifact_code}, true));
                 this.columnArtifact_code.AllowDBNull = false;
@@ -2349,6 +2364,22 @@ namespace Inventory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Diameter {
+                get {
+                    try {
+                        return ((string)(this[this.tableArtifacts.DiameterColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Diameter\' in table \'Artifacts\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableArtifacts.DiameterColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMuseum_codeNull() {
                 return this.IsNull(this.tableArtifacts.Museum_codeColumn);
             }
@@ -2549,6 +2580,18 @@ namespace Inventory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetWeightNull() {
                 this[this.tableArtifacts.WeightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDiameterNull() {
+                return this.IsNull(this.tableArtifacts.DiameterColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDiameterNull() {
+                this[this.tableArtifacts.DiameterColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3047,10 +3090,11 @@ namespace Inventory.Database1DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Thickness", "Thickness");
             tableMapping.ColumnMappings.Add("Length", "Length");
             tableMapping.ColumnMappings.Add("Weight", "Weight");
+            tableMapping.ColumnMappings.Add("Diameter", "Diameter");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Artifacts] WHERE (([Artifact_code] = @Original_Artifact_code) AND ((@IsNull_Museum_code = 1 AND [Museum_code] IS NULL) OR ([Museum_code] = @Original_Museum_code)) AND ((@p3 = 1 AND [Location(district)] IS NULL) OR ([Location(district)] = @p2)) AND ((@p6 = 1 AND [Location(Place Name)] IS NULL) OR ([Location(Place Name)] = @p5)) AND ((@IsNull_GPS_coordinates = 1 AND [GPS_coordinates] IS NULL) OR ([GPS_coordinates] = @Original_GPS_coordinates)) AND ((@IsNull_Type_of_the_artifact = 1 AND [Type_of_the_artifact] IS NULL) OR ([Type_of_the_artifact] = @Original_Type_of_the_artifact)) AND ((@IsNull_Material = 1 AND [Material] IS NULL) OR ([Material] = @Original_Material)) AND ((@IsNull_Chronology = 1 AND [Chronology] IS NULL) OR ([Chronology] = @Original_Chronology)) AND ((@IsNull_Height = 1 AND [Height] IS NULL) OR ([Height] = @Original_Height)) AND ((@IsNull_Width = 1 AND [Width] IS NULL) OR ([Width] = @Original_Width)) AND ((@IsNull_Thickness = 1 AND [Thickness] IS NULL) OR ([Thickness] = @Original_Thickness)) AND ((@IsNull_Length = 1 AND [Length] IS NULL) OR ([Length] = @Original_Length)) AND ((@IsNull_Weight = 1 AND [Weight] IS NULL) OR ([Weight] = @Original_Weight)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Artifacts] WHERE (([Artifact_code] = @Original_Artifact_code) AND ((@IsNull_Museum_code = 1 AND [Museum_code] IS NULL) OR ([Museum_code] = @Original_Museum_code)) AND ((@p3 = 1 AND [Location(district)] IS NULL) OR ([Location(district)] = @p2)) AND ((@p6 = 1 AND [Location(Place Name)] IS NULL) OR ([Location(Place Name)] = @p5)) AND ((@IsNull_GPS_coordinates = 1 AND [GPS_coordinates] IS NULL) OR ([GPS_coordinates] = @Original_GPS_coordinates)) AND ((@IsNull_Type_of_the_artifact = 1 AND [Type_of_the_artifact] IS NULL) OR ([Type_of_the_artifact] = @Original_Type_of_the_artifact)) AND ((@IsNull_Material = 1 AND [Material] IS NULL) OR ([Material] = @Original_Material)) AND ((@IsNull_Chronology = 1 AND [Chronology] IS NULL) OR ([Chronology] = @Original_Chronology)) AND ((@IsNull_Height = 1 AND [Height] IS NULL) OR ([Height] = @Original_Height)) AND ((@IsNull_Width = 1 AND [Width] IS NULL) OR ([Width] = @Original_Width)) AND ((@IsNull_Thickness = 1 AND [Thickness] IS NULL) OR ([Thickness] = @Original_Thickness)) AND ((@IsNull_Length = 1 AND [Length] IS NULL) OR ([Length] = @Original_Length)) AND ((@IsNull_Weight = 1 AND [Weight] IS NULL) OR ([Weight] = @Original_Weight)) AND ((@IsNull_Diameter = 1 AND [Diameter] IS NULL) OR ([Diameter] = @Original_Diameter)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Artifact_code", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Artifact_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Museum_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Museum_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3077,10 +3121,12 @@ namespace Inventory.Database1DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Length", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Length", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Weight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Weight", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Diameter", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diameter", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Diameter", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diameter", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Artifacts] ([Artifact_code], [Museum_code], [Location(district)], [Location(Place Name)], [GPS_coordinates], [Type_of_the_artifact], [Material], [Chronology], [Based_on], [Description], [Image], [Usage], [Bibliography], [Height], [Width], [Thickness], [Length], [Weight]) VALUES (@Artifact_code, @Museum_code, @p1, @p4, @GPS_coordinates, @Type_of_the_artifact, @Material, @Chronology, @Based_on, @Description, @Image, @Usage, @Bibliography, @Height, @Width, @Thickness, @Length, @Weight);
-SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)], GPS_coordinates, Type_of_the_artifact, Material, Chronology, Based_on, Description, Image, Usage, Bibliography, Height, Width, Thickness, Length, Weight FROM Artifacts WHERE (Artifact_code = @Artifact_code)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Artifacts] ([Artifact_code], [Museum_code], [Location(district)], [Location(Place Name)], [GPS_coordinates], [Type_of_the_artifact], [Material], [Chronology], [Based_on], [Description], [Image], [Usage], [Bibliography], [Height], [Width], [Thickness], [Length], [Weight], [Diameter]) VALUES (@Artifact_code, @Museum_code, @p1, @p4, @GPS_coordinates, @Type_of_the_artifact, @Material, @Chronology, @Based_on, @Description, @Image, @Usage, @Bibliography, @Height, @Width, @Thickness, @Length, @Weight, @Diameter);
+SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)], GPS_coordinates, Type_of_the_artifact, Material, Chronology, Based_on, Description, Image, Usage, Bibliography, Height, Width, Thickness, Length, Weight, Diameter FROM Artifacts WHERE (Artifact_code = @Artifact_code)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Artifact_code", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Artifact_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Museum_code", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Museum_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3100,6 +3146,7 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Thickness", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Thickness", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Length", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Length", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Weight", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diameter", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diameter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Artifacts] SET [Artifact_code] = @Artifact_code, [Museum_code] = @M" +
@@ -3108,25 +3155,27 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
                 "erial] = @Material, [Chronology] = @Chronology, [Based_on] = @Based_on, [Descrip" +
                 "tion] = @Description, [Image] = @Image, [Usage] = @Usage, [Bibliography] = @Bibl" +
                 "iography, [Height] = @Height, [Width] = @Width, [Thickness] = @Thickness, [Lengt" +
-                "h] = @Length, [Weight] = @Weight WHERE (([Artifact_code] = @Original_Artifact_co" +
-                "de) AND ((@IsNull_Museum_code = 1 AND [Museum_code] IS NULL) OR ([Museum_code] =" +
-                " @Original_Museum_code)) AND ((@p3 = 1 AND [Location(district)] IS NULL) OR ([Lo" +
-                "cation(district)] = @p2)) AND ((@p6 = 1 AND [Location(Place Name)] IS NULL) OR (" +
-                "[Location(Place Name)] = @p5)) AND ((@IsNull_GPS_coordinates = 1 AND [GPS_coordi" +
-                "nates] IS NULL) OR ([GPS_coordinates] = @Original_GPS_coordinates)) AND ((@IsNul" +
-                "l_Type_of_the_artifact = 1 AND [Type_of_the_artifact] IS NULL) OR ([Type_of_the_" +
-                "artifact] = @Original_Type_of_the_artifact)) AND ((@IsNull_Material = 1 AND [Mat" +
-                "erial] IS NULL) OR ([Material] = @Original_Material)) AND ((@IsNull_Chronology =" +
-                " 1 AND [Chronology] IS NULL) OR ([Chronology] = @Original_Chronology)) AND ((@Is" +
-                "Null_Height = 1 AND [Height] IS NULL) OR ([Height] = @Original_Height)) AND ((@I" +
-                "sNull_Width = 1 AND [Width] IS NULL) OR ([Width] = @Original_Width)) AND ((@IsNu" +
-                "ll_Thickness = 1 AND [Thickness] IS NULL) OR ([Thickness] = @Original_Thickness)" +
-                ") AND ((@IsNull_Length = 1 AND [Length] IS NULL) OR ([Length] = @Original_Length" +
-                ")) AND ((@IsNull_Weight = 1 AND [Weight] IS NULL) OR ([Weight] = @Original_Weigh" +
-                "t)));\r\nSELECT Artifact_code, Museum_code, [Location(district)], [Location(Place " +
-                "Name)], GPS_coordinates, Type_of_the_artifact, Material, Chronology, Based_on, D" +
-                "escription, Image, Usage, Bibliography, Height, Width, Thickness, Length, Weight" +
-                " FROM Artifacts WHERE (Artifact_code = @Artifact_code)";
+                "h] = @Length, [Weight] = @Weight, [Diameter] = @Diameter WHERE (([Artifact_code]" +
+                " = @Original_Artifact_code) AND ((@IsNull_Museum_code = 1 AND [Museum_code] IS N" +
+                "ULL) OR ([Museum_code] = @Original_Museum_code)) AND ((@p3 = 1 AND [Location(dis" +
+                "trict)] IS NULL) OR ([Location(district)] = @p2)) AND ((@p6 = 1 AND [Location(Pl" +
+                "ace Name)] IS NULL) OR ([Location(Place Name)] = @p5)) AND ((@IsNull_GPS_coordin" +
+                "ates = 1 AND [GPS_coordinates] IS NULL) OR ([GPS_coordinates] = @Original_GPS_co" +
+                "ordinates)) AND ((@IsNull_Type_of_the_artifact = 1 AND [Type_of_the_artifact] IS" +
+                " NULL) OR ([Type_of_the_artifact] = @Original_Type_of_the_artifact)) AND ((@IsNu" +
+                "ll_Material = 1 AND [Material] IS NULL) OR ([Material] = @Original_Material)) AN" +
+                "D ((@IsNull_Chronology = 1 AND [Chronology] IS NULL) OR ([Chronology] = @Origina" +
+                "l_Chronology)) AND ((@IsNull_Height = 1 AND [Height] IS NULL) OR ([Height] = @Or" +
+                "iginal_Height)) AND ((@IsNull_Width = 1 AND [Width] IS NULL) OR ([Width] = @Orig" +
+                "inal_Width)) AND ((@IsNull_Thickness = 1 AND [Thickness] IS NULL) OR ([Thickness" +
+                "] = @Original_Thickness)) AND ((@IsNull_Length = 1 AND [Length] IS NULL) OR ([Le" +
+                "ngth] = @Original_Length)) AND ((@IsNull_Weight = 1 AND [Weight] IS NULL) OR ([W" +
+                "eight] = @Original_Weight)) AND ((@IsNull_Diameter = 1 AND [Diameter] IS NULL) O" +
+                "R ([Diameter] = @Original_Diameter)));\r\nSELECT Artifact_code, Museum_code, [Loca" +
+                "tion(district)], [Location(Place Name)], GPS_coordinates, Type_of_the_artifact, " +
+                "Material, Chronology, Based_on, Description, Image, Usage, Bibliography, Height," +
+                " Width, Thickness, Length, Weight, Diameter FROM Artifacts WHERE (Artifact_code " +
+                "= @Artifact_code)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Artifact_code", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Artifact_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Museum_code", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Museum_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3146,6 +3195,7 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Thickness", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Thickness", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Length", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Length", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Weight", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diameter", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diameter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Artifact_code", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Artifact_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Museum_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Museum_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Museum_code", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Museum_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3171,6 +3221,8 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Length", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Length", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Weight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Weight", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Diameter", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diameter", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Diameter", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diameter", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3186,14 +3238,11 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)], " +
-                "GPS_coordinates, Type_of_the_artifact, Material,  Chronology, Based_on, Descript" +
-                "ion, Image, Usage, Bibliography,  Height, Width, Thickness, Length, Weight FROM " +
-                "dbo.Artifacts";
+            this._commandCollection[0].CommandText = @"SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)], GPS_coordinates, Type_of_the_artifact, Material,  Chronology, Based_on, Description, Image, Usage, Bibliography,  Height, Width, Thickness, Length, Weight, Diameter FROM dbo.Artifacts";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT Artifact_code, Based_on, Bibliography, Chronology, Description, GPS_coordinates, Height, Image, Length, [Location(Place Name)], [Location(district)], Material, Museum_code, Thickness, Type_of_the_artifact, Usage, Weight, Width FROM Artifacts WHERE (@artifact IS NULL OR LEN(@artifact) = 0 OR Type_of_the_artifact = @artifact) AND (@material IS NULL OR LEN(@material) = 0 OR Material = @material) AND (@location IS NULL OR LEN(@location) = 0 OR [Location(district)] = @location) AND (@chronology IS NULL OR LEN(@chronology) = 0 OR Chronology = @chronology)";
+            this._commandCollection[1].CommandText = @"SELECT Artifact_code, Based_on, Bibliography, Chronology, Description, Diameter, GPS_coordinates, Height, Image, Length, [Location(Place Name)], [Location(district)], Material, Museum_code, Thickness, Type_of_the_artifact, Usage, Weight, Width FROM Artifacts WHERE (@artifact IS NULL OR LEN(@artifact) = 0 OR Type_of_the_artifact = @artifact) AND (@material IS NULL OR LEN(@material) = 0 OR Material = @material) AND (@location IS NULL OR LEN(@location) = 0 OR [Location(district)] = @location) AND (@chronology IS NULL OR LEN(@chronology) = 0 OR Chronology = @chronology)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@artifact", global::System.Data.SqlDbType.NChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Type_of_the_artifact", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@material", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Material", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3295,7 +3344,7 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Artifact_code, string Original_Museum_code, string p2, string p5, string Original_GPS_coordinates, string Original_Type_of_the_artifact, string Original_Material, string Original_Chronology, string Original_Height, string Original_Width, string Original_Thickness, string Original_Length, string Original_Weight) {
+        public virtual int Delete(string Original_Artifact_code, string Original_Museum_code, string p2, string p5, string Original_GPS_coordinates, string Original_Type_of_the_artifact, string Original_Material, string Original_Chronology, string Original_Height, string Original_Width, string Original_Thickness, string Original_Length, string Original_Weight, string Original_Diameter) {
             if ((Original_Artifact_code == null)) {
                 throw new global::System.ArgumentNullException("Original_Artifact_code");
             }
@@ -3398,6 +3447,14 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_Weight));
             }
+            if ((Original_Diameter == null)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_Diameter));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3436,7 +3493,8 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
                     string Width, 
                     string Thickness, 
                     string Length, 
-                    string Weight) {
+                    string Weight, 
+                    string Diameter) {
             if ((Artifact_code == null)) {
                 throw new global::System.ArgumentNullException("Artifact_code");
             }
@@ -3545,6 +3603,12 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
             else {
                 this.Adapter.InsertCommand.Parameters[17].Value = ((string)(Weight));
             }
+            if ((Diameter == null)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(Diameter));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3584,6 +3648,7 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
                     string Thickness, 
                     string Length, 
                     string Weight, 
+                    string Diameter, 
                     string Original_Artifact_code, 
                     string Original_Museum_code, 
                     string p2, 
@@ -3596,7 +3661,8 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
                     string Original_Width, 
                     string Original_Thickness, 
                     string Original_Length, 
-                    string Original_Weight) {
+                    string Original_Weight, 
+                    string Original_Diameter) {
             if ((Artifact_code == null)) {
                 throw new global::System.ArgumentNullException("Artifact_code");
             }
@@ -3705,107 +3771,121 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Weight));
             }
+            if ((Diameter == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Diameter));
+            }
             if ((Original_Artifact_code == null)) {
                 throw new global::System.ArgumentNullException("Original_Artifact_code");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Artifact_code));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Artifact_code));
             }
             if ((Original_Museum_code == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Museum_code));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Museum_code));
             }
             if ((p2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(p2));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(p2));
             }
             if ((p5 == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(p5));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(p5));
             }
             if ((Original_GPS_coordinates == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_GPS_coordinates));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_GPS_coordinates));
             }
             if ((Original_Type_of_the_artifact == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Type_of_the_artifact));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_Type_of_the_artifact));
             }
             if ((Original_Material == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_Material));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_Material));
             }
             if ((Original_Chronology == null)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_Chronology));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_Chronology));
             }
             if ((Original_Height == null)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_Height));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_Height));
             }
             if ((Original_Width == null)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_Width));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_Width));
             }
             if ((Original_Thickness == null)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_Thickness));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_Thickness));
             }
             if ((Original_Length == null)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_Length));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_Length));
             }
             if ((Original_Weight == null)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_Weight));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_Weight));
+            }
+            if ((Original_Diameter == null)) {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_Diameter));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3845,6 +3925,7 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
                     string Thickness, 
                     string Length, 
                     string Weight, 
+                    string Diameter, 
                     string Original_Artifact_code, 
                     string Original_Museum_code, 
                     string p2, 
@@ -3857,8 +3938,9 @@ SELECT Artifact_code, Museum_code, [Location(district)], [Location(Place Name)],
                     string Original_Width, 
                     string Original_Thickness, 
                     string Original_Length, 
-                    string Original_Weight) {
-            return this.Update(Original_Artifact_code, Museum_code, p1, p4, GPS_coordinates, Type_of_the_artifact, Material, Chronology, Based_on, Description, Image, Usage, Bibliography, Height, Width, Thickness, Length, Weight, Original_Artifact_code, Original_Museum_code, p2, p5, Original_GPS_coordinates, Original_Type_of_the_artifact, Original_Material, Original_Chronology, Original_Height, Original_Width, Original_Thickness, Original_Length, Original_Weight);
+                    string Original_Weight, 
+                    string Original_Diameter) {
+            return this.Update(Original_Artifact_code, Museum_code, p1, p4, GPS_coordinates, Type_of_the_artifact, Material, Chronology, Based_on, Description, Image, Usage, Bibliography, Height, Width, Thickness, Length, Weight, Diameter, Original_Artifact_code, Original_Museum_code, p2, p5, Original_GPS_coordinates, Original_Type_of_the_artifact, Original_Material, Original_Chronology, Original_Height, Original_Width, Original_Thickness, Original_Length, Original_Weight, Original_Diameter);
         }
     }
     
